@@ -10,7 +10,7 @@ import '../title_text.dart';
 import 'heart_btn.dart';
 
 class ProductWidget extends StatefulWidget {
-  const ProductWidget({super.key, required this.productId});
+  const ProductWidget({super.key, required this.productId, required String productID, required String specialtiesID});
 
   final String productId;
 
@@ -35,7 +35,7 @@ class _ProductWidgetState extends State<ProductWidget> {
             child: GestureDetector(
               onTap: () async {
                 viewedProvider.addProductToHistory(
-                    productId: getCurrProduct.productID);
+                    productId: getCurrProduct.specialtiesID);
                 // await Navigator.pushNamed(context, ProductDetails.routName,
                 //     arguments: getCurrProduct.productID);
               },
@@ -64,7 +64,7 @@ class _ProductWidgetState extends State<ProductWidget> {
                       Flexible(
                         flex: 2,
                         child: HeartButtonWidget(
-                          productId: getCurrProduct.productID,
+                          productId: getCurrProduct.specialtiesID,
                         ),
                       ),
                     ],
@@ -89,17 +89,17 @@ class _ProductWidgetState extends State<ProductWidget> {
                               borderRadius: BorderRadius.circular(13.0),
                               onTap: () {
                                 if (cartProvider.isProductInCart(
-                                    productId: getCurrProduct.productID)) {
+                                    productId: getCurrProduct.specialtiesID)) {
                                   return;
                                 }
                                 cartProvider.addProductToCart(
-                                    productId: getCurrProduct.productID);
+                                    productId: getCurrProduct.specialtiesID);
                               },
                               child: Padding(
                                 padding: const EdgeInsets.all(5.0),
                                 child: Icon(
                                   cartProvider.isProductInCart(
-                                          productId: getCurrProduct.productID)
+                                          productId: getCurrProduct.specialtiesID)
                                       ? Icons.check
                                       : Icons.add_shopping_cart_rounded,
                                 ),

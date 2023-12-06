@@ -1,14 +1,15 @@
 import 'package:card_swiper/card_swiper.dart';
 import 'package:doc_on_call/providers/product_provider.dart';
-import 'package:doc_on_call/widgets/products/latest_arrival.dart';
+import 'package:doc_on_call/widgets/products/ctg_rounded_widget.dart';
 import 'package:doc_on_call/widgets/subtitle_text.dart';
+import 'package:doc_on_call/widgets/title_text.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../consts/app_constans.dart';
 import '../services/assets_manager.dart';
 import '../widgets/app_name_text.dart';
-import '../widgets/title_text.dart';
 
+// ignore: must_be_immutable
 class HomeScreen extends StatelessWidget {
   HomeScreen({super.key, required String title});
   String? get routeName => null;
@@ -20,11 +21,25 @@ class HomeScreen extends StatelessWidget {
     "Cold",
   ];
 
+  List names = [
+    "Esraa AbdelMonem",
+    "Mohamed Ebid",
+    "Ashraf Mahrous",
+    "Soliman Mohamed",
+  ];
+
+  List rates = [
+    "4.9",
+    "4.6",
+    "4.8",
+    "4.7",
+  ];
+
   List imgs = [
-    "assets/images/doc/Doctor1.jpg",
-    "assets/images/doc/Doctor2.jpg",
-    "assets/images/doc/Doctor3.jpg",
-    "assets/images/doc/Doctor4.jpg",
+    "assets/images/doc/doctor1.jpg",
+    "assets/images/doc/doctor2.jpg",
+    "assets/images/doc/doctor3.jpg",
+    "assets/images/doc/doctor5.jpg",
   ];
 
   @override
@@ -183,9 +198,10 @@ class HomeScreen extends StatelessWidget {
                 height: 25,
               ),
               const Padding(
-                padding: EdgeInsets.only(left: 15),
-                child: SubtitleTextWidget(
-                  label: "What are your symptoms?",
+                padding: EdgeInsets.only(left: 0),
+                child: TitleTextWidget(
+                  lablel: "What are your symptoms",
+                  fontSize: 20,
                 ),
               ),
               SizedBox(
@@ -227,75 +243,97 @@ class HomeScreen extends StatelessWidget {
               const SizedBox(
                 height: 15,
               ),
-              // const Padding(
-              //   padding: EdgeInsets.only(
-              //     left: 15,
-              //   ),
-              //   child: SubtitleTextWidget(label: "Popular Doctors"),
-              // ),
-              // GridView.builder(
-              //   gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-              //     crossAxisCount: 2,
-              //   ),
-              //   itemCount: 4,
-              //   shrinkWrap: true,
-              //   physics: const NeverScrollableScrollPhysics(),
-              //   itemBuilder: (context, index) {
-              //     return InkWell(
-              //       onTap: () {},
-              //       child: Container(
-              //         margin: const EdgeInsets.all(10),
-              //         padding: const EdgeInsets.symmetric(vertical: 15),
-              //         decoration: BoxDecoration(
-              //           color: Colors.white,
-              //           borderRadius: BorderRadius.circular(10),
-              //           boxShadow: const [
-              //             BoxShadow(
-              //               color: Colors.black12,
-              //               blurRadius: 4,
-              //               spreadRadius: 2,
-              //             ),
-              //           ],
-              //         ),
-              //         child: Column(
-              //           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              //           children: [
-              //             CircleAvatar(
-              //               radius: 30,
-              //               backgroundImage: AssetImage("assets/images/doc/${imgs[index]}"),
-              //             ),
-              //             const Text(
-              //               "Dr: Mohamed Hamed",
-              //               style: TextStyle(
-              //                   fontSize: 18,
-              //                   fontWeight: FontWeight.w500,
-              //                   color: Colors.black54),
-              //             ),
-              //             const Text(
-              //               "Therapist",
-              //               style: TextStyle(
-              //                 color: Colors.black45,
-              //               ),
-              //             ),
-              //             const Row(
-              //               mainAxisSize: MainAxisSize.min,
-              //               mainAxisAlignment: MainAxisAlignment.center,
-              //               children: [
-              //                 Icon(
-              //                   Icons.star,
-              //                   color: Colors.amber,
-              //                 ),
-              //                 SubtitleTextWidget(
-              //                   label: "4.6",
-              //                 ),
-              //               ],
-              //             ),
-              //           ],
-              //         ),
-              //       ),
-              //     );
-              //   },
-              // ),
+              const TitleTextWidget(
+                lablel: "Popular specializations",
+                fontSize: 20,
+              ),
+              const SizedBox(
+                height: 15,
+              ),
+              GridView.count(
+                  shrinkWrap: true,
+                  physics: const NeverScrollableScrollPhysics(),
+                  crossAxisCount: 4,
+                  children:
+                      List.generate(AppConstans.categoriesList.length, (index) {
+                    return CategoryRoundedWidget(
+                        image: AppConstans.categoriesList[index].image,
+                        name: AppConstans.categoriesList[index].name);
+                  })),
+              const SizedBox(
+                height: 25,
+              ),
+              const Padding(
+                padding: EdgeInsets.only(
+                  left: 0,
+                ),
+                child: TitleTextWidget(
+                  lablel: "Popular Doctors",
+                  fontSize: 20,
+                ),
+              ),
+              GridView.builder(
+                gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                  crossAxisCount: 2,
+                ),
+                itemCount: 4,
+                shrinkWrap: true,
+                physics: const NeverScrollableScrollPhysics(),
+                itemBuilder: (context, index) {
+                  return InkWell(
+                    onTap: () {},
+                    child: Container(
+                      margin: const EdgeInsets.all(10),
+                      padding: const EdgeInsets.symmetric(vertical: 15),
+                      decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.circular(10),
+                        boxShadow: const [
+                          BoxShadow(
+                            color: Colors.black12,
+                            blurRadius: 4,
+                            spreadRadius: 2,
+                          ),
+                        ],
+                      ),
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        children: [
+                          CircleAvatar(
+                            radius: 30,
+                            backgroundImage:
+                                AssetImage("assets/images/doc/${imgs[index]}"),
+                          ),
+                          Text(
+                            "${names[index]}",
+                            style: const TextStyle(
+                                fontSize: 18,
+                                fontWeight: FontWeight.w500,
+                                color: Colors.black54),
+                          ),
+                          const Text(
+                            "Therapist",
+                            style: TextStyle(
+                              color: Colors.black45,
+                            ),
+                          ),
+                          Row(
+                            mainAxisSize: MainAxisSize.min,
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              const Icon(
+                                Icons.star,
+                                color: Colors.amber,
+                              ),
+                              Text("${rates[index]}")
+                            ],
+                          ),
+                        ],
+                      ),
+                    ),
+                  );
+                },
+              ),
               // SizedBox(
               //   height: size.height * 0.2,
               //   child: ListView.builder(
@@ -307,27 +345,9 @@ class HomeScreen extends StatelessWidget {
               //             child: const LatestArrivalProductWidget());
               //       }),
               // ),
-              // const SizedBox(
-              //   height: 22,
-              // ),
-              // const TitleTextWidget(
-              //   lablel: "Categories",
-              //   fontSize: 22,
-              // ),
-              // const SizedBox(
-              //   height: 22,
-              // ),
-              // GridView.count(
-              //   shrinkWrap: true,
-              //   physics: const NeverScrollableScrollPhysics(),
-              //   crossAxisCount: 2,
-              //   // children:
-              //   //     List.generate(AppConstans.categoriesList.length, (index) {
-              //   //   return CategoryRoundedWidget(
-              //   //       image: AppConstans.categoriesList[index].image,
-              //   //       name: AppConstans.categoriesList[index].name);
-              //   // })
-              // ),
+              const SizedBox(
+                height: 22,
+              ),
             ],
           ),
         ),

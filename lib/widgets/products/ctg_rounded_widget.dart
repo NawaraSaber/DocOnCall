@@ -20,15 +20,15 @@ class CategoryRoundedWidget extends StatelessWidget {
         children: [
           Image.asset(
             image,
-            height: 70,
-            width: 70,
+            height: 40,
+            width: 40,
           ),
           const SizedBox(
             height: 15,
           ),
           SubtitleTextWidget(
             label: name,
-            fontSize: 14,
+            fontSize: 12,
             fontWeight: FontWeight.bold,
           )
         ],

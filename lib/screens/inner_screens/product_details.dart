@@ -81,7 +81,7 @@ class _ProductDetailsState extends State<ProductDetails> {
                             mainAxisAlignment: MainAxisAlignment.spaceAround,
                             children: [
                               HeartButtonWidget(
-                                productId: getCurrProduct.productID,
+                                productId: getCurrProduct.specialtiesID,
                                 color: Colors.blue.shade300,
                               ),
                               const SizedBox(
@@ -102,23 +102,23 @@ class _ProductDetailsState extends State<ProductDetails> {
                                     onPressed: () {
                                       if (cartProvider.isProductInCart(
                                           productId:
-                                              getCurrProduct.productID)) {
+                                              getCurrProduct.specialtiesID)) {
                                         return;
                                       }
                                       cartProvider.addProductToCart(
-                                          productId: getCurrProduct.productID);
+                                          productId: getCurrProduct.specialtiesID);
                                     },
                                     icon: Icon(
                                       cartProvider.isProductInCart(
                                               productId:
-                                                  getCurrProduct.productID)
+                                                  getCurrProduct.specialtiesID)
                                           ? Icons.check
                                           : Icons.add_shopping_cart_rounded,
                                     ),
                                     label: Text(
                                       cartProvider.isProductInCart(
                                               productId:
-                                                  getCurrProduct.productID)
+                                                  getCurrProduct.specialtiesID)
                                           ? "In Cart"
                                           : "Add to cart",
                                     ),

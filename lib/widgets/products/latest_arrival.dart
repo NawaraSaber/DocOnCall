@@ -20,7 +20,7 @@ class LatestArrivalProductWidget extends StatelessWidget {
       child: GestureDetector(
         onTap: () async {
           viewedProvider.addProductToHistory(
-              productId: productsModel.productID);
+              productId: productsModel.specialtiesID);
           // await Navigator.pushNamed(context, ProductDetails.routName,
           //           arguments: productsModel.productID);
         },
@@ -55,7 +55,7 @@ class LatestArrivalProductWidget extends StatelessWidget {
                       child: Row(
                         children: [
                           HeartButtonWidget(
-                            productId: productsModel.productID,
+                            productId: productsModel.specialtiesID,
                           ),
                           IconButton(
                             onPressed: () {},

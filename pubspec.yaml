@@ -71,6 +71,7 @@ flutter:
     - assets/images/
     - assets/images/doc/
     - assets/images/profile/
+    - assets/images/Specialties/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

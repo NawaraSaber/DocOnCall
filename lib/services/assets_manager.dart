@@ -2,6 +2,7 @@ class AssetsManager {
   static String imagesPath = "assets/images";
   static String profileImagesPath = "assets/images/profile";
   static String docImagesPath = "assets/images/doc";
+  static String specialtiesImagesPath = "assets/images/Specialties";
 
 // general images
   static String forgotPassword = "$imagesPath/forgot_password.jpg";
@@ -39,4 +40,14 @@ class AssetsManager {
   static String recevie = "$docImagesPath/recevie.png";
   static String doctors1 = "$docImagesPath/Doctors1.png";
   static String doctors2 = "$docImagesPath/Doctors2.jpg";
+
+  // Specialties path
+  static String gynecologist = "$specialtiesImagesPath/gynecologist.png";
+  static String liver = "$specialtiesImagesPath/liver.png";
+  static String pediatrics = "$specialtiesImagesPath/pediatrics.png";
+  static String internist = "$specialtiesImagesPath/internist.png";
+  static String tooth = "$specialtiesImagesPath/tooth.png";
+  static String heart = "$specialtiesImagesPath/heart.png";
+  static String neurologist = "$specialtiesImagesPath/neurologist.png";
+  static String dermatologist = "$specialtiesImagesPath/dermatologist.png";
 }
