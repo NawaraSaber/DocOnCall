@@ -1,9 +1,7 @@
 import 'package:card_swiper/card_swiper.dart';
-import 'package:doc_on_call/providers/product_provider.dart';
 import 'package:doc_on_call/widgets/products/ctg_rounded_widget.dart';
 import 'package:doc_on_call/widgets/title_text.dart';
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
 import '../consts/app_constans.dart';
 import '../services/assets_manager.dart';
 import '../widgets/app_name_text.dart';
@@ -34,7 +32,7 @@ class HomeScreen extends StatelessWidget {
     "4.7",
   ];
 
-  List imgs = [
+  List images = [
     "assets/images/doc/doctor1.jpg",
     "assets/images/doc/doctor2.jpg",
     "assets/images/doc/doctor3.jpg",
@@ -44,8 +42,6 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
-    final productProvider = Provider.of<ProductProvider>(context);
-
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Theme.of(context).scaffoldBackgroundColor,
@@ -301,7 +297,7 @@ class HomeScreen extends StatelessWidget {
                           CircleAvatar(
                             radius: 30,
                             backgroundImage:
-                                AssetImage("assets/images/doc/${imgs[index]}"),
+                                AssetImage("${images[index]}"),
                           ),
                           Text(
                             "${names[index]}",

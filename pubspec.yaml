@@ -70,6 +70,10 @@ flutter:
   assets:
     - assets/images/
     - assets/images/doc/
+    - assets/images/doc/doctor3.jpg
+    - assets/images/doc/doctor2.jpg
+    - assets/images/doc/doctor1.jpg
+    - assets/images/doc/doctor5.jpg
     - assets/images/profile/
     - assets/images/Specialties/
 

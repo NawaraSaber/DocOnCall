@@ -15,8 +15,8 @@ class AppConstans {
         image: AssetsManager.pediatrics,
         name: "Pediatrics"),
     CategoryModel(
-        id: AssetsManager.tooth,
-        image: AssetsManager.tooth,
+        id: AssetsManager.dentist,
+        image: AssetsManager.dentist,
         name: "Dentist"),
     CategoryModel(
         id: AssetsManager.internist,

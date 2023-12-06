@@ -43,6 +43,7 @@ class AssetsManager {
 
   // Specialties path
   static String gynecologist = "$specialtiesImagesPath/gynecologist.png";
+  static String dentist = "$specialtiesImagesPath/dentistry.png";
   static String liver = "$specialtiesImagesPath/liver.png";
   static String pediatrics = "$specialtiesImagesPath/pediatrics.png";
   static String internist = "$specialtiesImagesPath/internist.png";
