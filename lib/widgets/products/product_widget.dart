@@ -10,7 +10,10 @@ import '../title_text.dart';
 import 'heart_btn.dart';
 
 class ProductWidget extends StatefulWidget {
-  const ProductWidget({super.key, required this.productId, required String productID, required String specialtiesID});
+  const ProductWidget({
+    super.key,
+    required this.productId,
+  });
 
   final String productId;
 
@@ -99,7 +102,8 @@ class _ProductWidgetState extends State<ProductWidget> {
                                 padding: const EdgeInsets.all(5.0),
                                 child: Icon(
                                   cartProvider.isProductInCart(
-                                          productId: getCurrProduct.specialtiesID)
+                                          productId:
+                                              getCurrProduct.specialtiesID)
                                       ? Icons.check
                                       : Icons.add_shopping_cart_rounded,
                                 ),

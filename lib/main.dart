@@ -8,6 +8,7 @@ import 'package:doc_on_call/root_screen.dart';
 import 'package:doc_on_call/screens/auth/forgot_password.dart';
 import 'package:doc_on_call/screens/auth/login.dart';
 import 'package:doc_on_call/screens/auth/regisrter.dart';
+import 'package:doc_on_call/screens/inner_screens/product_details.dart';
 import 'package:doc_on_call/screens/inner_screens/wishlist.dart';
 import 'package:doc_on_call/screens/search_screen.dart';
 import 'package:flutter/material.dart';
@@ -49,7 +50,7 @@ class MyApp extends StatelessWidget {
           debugShowCheckedModeBanner: false,
           home: const RootScreen(),
           routes: {
-            // ProductDetails.routName: (context) => const ProductDetails(),
+            ProductDetails.routName: (context) => const ProductDetails(),
             WishlistScreen.routName: (context) => const WishlistScreen(),
             // ViewedRecentlyScreen.routName: (context) =>
             //     const ViewedRecentlyScreen(),

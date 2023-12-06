@@ -45,7 +45,7 @@ class ViewedRecentlyScreen extends StatelessWidget {
                 return Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: ProductWidget(
-                    productId: viewedProvider.getViewedProdItems.values.toList()[index].productId, productID: '', specialtiesID: '',
+                    productId: viewedProvider.getViewedProdItems.values.toList()[index].productId,
                   ),
                 );
               }),

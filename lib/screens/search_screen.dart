@@ -118,9 +118,9 @@ class _SearchScreenState extends State<SearchScreen> {
                         : productList.length,
                     builder: ((context, index) {
                       return ProductWidget(
-                        specialtiesID: searchTextController.text.isNotEmpty
+                        productId: searchTextController.text.isNotEmpty
                             ? productListSearch[index].specialtiesID
-                            : productList[index].specialtiesID, productID: '', productId: '',
+                            : productList[index].specialtiesID,
                       );
                     }),
                     crossAxisCount: 2,

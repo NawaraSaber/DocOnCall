@@ -52,7 +52,7 @@ class WishlistScreen extends StatelessWidget {
                 return ProductWidget(
                   productId: wishlistProvider.getWishlistItems.values
                       .toList()[index]
-                      .productId, productID: '', specialtiesID: '',
+                      .productId,
                 );
               }),
               crossAxisCount: 2,

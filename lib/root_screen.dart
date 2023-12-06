@@ -1,3 +1,5 @@
+import 'package:doc_on_call/screens/appioment_screen.dart';
+import 'package:doc_on_call/screens/chat_screen.dart';
 import 'package:doc_on_call/screens/home_screen.dart';
 import 'package:doc_on_call/screens/profile_screen.dart';
 import 'package:doc_on_call/screens/search_screen.dart';
@@ -17,10 +19,15 @@ class _RootScreenState extends State<RootScreen> {
   late PageController controller;
   int currentScreen = 0;
   List<Widget> screens = [
-    HomeScreen(title: 'DocOnCall',),
+    HomeScreen(
+      title: 'DocOnCall',
+    ),
     const SearchScreen(),
-    // const CartScreen(),
-    const ProfileScreen(title: 'DocOnCall',),
+    const ChatScreen(),
+    const AppointmentScreen(),
+    const ProfileScreen(
+      title: 'DocOnCall',
+    ),
   ];
   @override
   void initState() {
@@ -49,7 +56,7 @@ class _RootScreenState extends State<RootScreen> {
           });
           controller.jumpToPage(currentScreen);
         },
-        destinations:  const [
+        destinations: const [
           NavigationDestination(
             selectedIcon: Icon(IconlyBold.home),
             icon: Icon(IconlyLight.home),
@@ -68,7 +75,7 @@ class _RootScreenState extends State<RootScreen> {
           NavigationDestination(
             selectedIcon: Icon(IconlyBold.bag2),
             icon: Icon(IconlyLight.calendar),
-            label: "Appointments", 
+            label: "Appointments",
           ),
           NavigationDestination(
             selectedIcon: Icon(IconlyBold.profile),

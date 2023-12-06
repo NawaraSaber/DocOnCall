@@ -1,7 +1,6 @@
 import 'package:card_swiper/card_swiper.dart';
 import 'package:doc_on_call/providers/product_provider.dart';
 import 'package:doc_on_call/widgets/products/ctg_rounded_widget.dart';
-import 'package:doc_on_call/widgets/subtitle_text.dart';
 import 'package:doc_on_call/widgets/title_text.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
