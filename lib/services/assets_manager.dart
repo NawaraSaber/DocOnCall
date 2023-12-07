@@ -31,15 +31,15 @@ class AssetsManager {
 
   // Doc path
   static String appoiment = "$docImagesPath/Appoiment.jpg";
-  static String doctor1 = "$docImagesPath/Doctor1.jpg";
-  static String doctor2 = "$docImagesPath/Doctor2.jpg";
-  static String doctor3 = "$docImagesPath/Doctor3.jpg";
-  static String doctor4 = "$docImagesPath/Doctor4.jpg";
-  static String doctor5 = "$docImagesPath/Doctor5.jpg";
-  static String doctor6 = "$docImagesPath/Doctor6.jpg";
+  static String doctor1 = "$docImagesPath/doctor1.jpg";
+  static String doctor2 = "$docImagesPath/doctor2.jpg";
+  static String doctor3 = "$docImagesPath/doctor3.jpg";
+  static String doctor4 = "$docImagesPath/doctor4.jpg";
+  static String doctor5 = "$docImagesPath/doctor5.jpg";
+  static String doctor6 = "$docImagesPath/doctor6.jpg";
   static String recevie = "$docImagesPath/recevie.png";
-  static String doctors1 = "$docImagesPath/Doctors1.png";
-  static String doctors2 = "$docImagesPath/Doctors2.jpg";
+  static String doctors1 = "$docImagesPath/doctors1.png";
+  static String doctors2 = "$docImagesPath/doctors2.jpg";
 
   // Specialties path
   static String gynecologist = "$specialtiesImagesPath/gynecologist.png";

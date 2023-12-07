@@ -34,8 +34,8 @@ class HomeScreen extends StatelessWidget {
 
   List images = [
     "assets/images/doc/doctor1.jpg",
-    "assets/images/doc/doctor2.jpg",
-    "assets/images/doc/doctor3.jpg",
+    "assets/images/doc/doctor4.jpg",
+    "assets/images/doc/doctor6.jpg",
     "assets/images/doc/doctor5.jpg",
   ];
 

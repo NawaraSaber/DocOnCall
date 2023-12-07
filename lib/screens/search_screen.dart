@@ -106,7 +106,7 @@ class _SearchScreenState extends State<SearchScreen> {
                   const Center(
                       child: TitleTextWidget(
                     lablel: "No result found",
-                    fontSize: 30,
+                    fontSize: 25,
                   )),
                 ],
                 Container(
@@ -123,7 +123,7 @@ class _SearchScreenState extends State<SearchScreen> {
                             : productList[index].specialtiesID,
                       );
                     }),
-                    crossAxisCount: 2,
+                    crossAxisCount: 1,
                   ),
                 ),
               ],

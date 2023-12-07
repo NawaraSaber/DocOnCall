@@ -42,82 +42,101 @@ class _ProductWidgetState extends State<ProductWidget> {
                 // await Navigator.pushNamed(context, ProductDetails.routName,
                 //     arguments: getCurrProduct.productID);
               },
-              child: Column(
-                children: [
-                  ClipRRect(
-                    borderRadius: BorderRadius.circular(20.0),
-                    child: FancyShimmerImage(
-                      imageUrl: getCurrProduct.productImage,
-                      width: double.infinity,
-                      height: size.height * 0.22,
+              child: Center(
+                child: Column(
+                  children: [
+                    ClipRRect(
+                      borderRadius: BorderRadius.circular(20.0),
+                      child: FancyShimmerImage(
+                        imageUrl: getCurrProduct.productImage,
+                        width: double.infinity,
+                        height: size.height * 0.22,
+                      ),
                     ),
-                  ),
-                  const SizedBox(
-                    height: 15.0,
-                  ),
-                  Row(
-                    children: [
-                      Flexible(
-                        flex: 5,
-                        child: TitleTextWidget(
-                          lablel: getCurrProduct.productTitle,
-                          maxLines: 2,
-                        ),
-                      ),
-                      Flexible(
-                        flex: 2,
-                        child: HeartButtonWidget(
-                          productId: getCurrProduct.specialtiesID,
-                        ),
-                      ),
-                    ],
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 5),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Flexible(
-                          flex: 3,
-                          child: SubtitleTextWidget(
-                            label: "${getCurrProduct.productPrice} ",
+                    const SizedBox(
+                      height: 15.0,
+                    ),
+                    Center(
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        children: [
+                          Flexible(
+                            flex: 5,
+                            child: TitleTextWidget(
+                              lablel: getCurrProduct.productTitle,
+                              fontSize: 22,
+                              maxLines: 2,
+                            ),
                           ),
-                        ),
-                        Flexible(
-                          child: Material(
-                            borderRadius: BorderRadius.circular(13.0),
-                            color: Colors.lightBlue,
-                            child: InkWell(
-                              splashColor: Colors.red,
-                              borderRadius: BorderRadius.circular(13.0),
-                              onTap: () {
-                                if (cartProvider.isProductInCart(
-                                    productId: getCurrProduct.specialtiesID)) {
-                                  return;
-                                }
-                                cartProvider.addProductToCart(
-                                    productId: getCurrProduct.specialtiesID);
-                              },
-                              child: Padding(
-                                padding: const EdgeInsets.all(5.0),
-                                child: Icon(
-                                  cartProvider.isProductInCart(
-                                          productId:
-                                              getCurrProduct.specialtiesID)
-                                      ? Icons.check
-                                      : Icons.add_shopping_cart_rounded,
+                          Flexible(
+                            flex: 2,
+                            child: HeartButtonWidget(
+                              productId: getCurrProduct.specialtiesID,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                    Center(
+                      child: Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 5),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Flexible(
+                              flex: 3,
+                              child: SubtitleTextWidget(
+                                label: "${getCurrProduct.productPrice} ",
+                                fontSize: 22,
+                              ),
+                            ),
+                            Flexible(
+                              child: Material(
+                                borderRadius: BorderRadius.circular(13.0),
+                                color: Colors.lightBlue,
+                                child: InkWell(
+                                  splashColor: Colors.red,
+                                  borderRadius: BorderRadius.circular(13.0),
+                                  onTap: () {
+                                    if (cartProvider.isProductInCart(
+                                        productId: getCurrProduct.specialtiesID)) {
+                                      return;
+                                    }
+                                    cartProvider.addProductToCart(
+                                        productId: getCurrProduct.specialtiesID);
+                                  },
+                                  child: const Padding(
+                                    padding: EdgeInsets.all(5.0),
+                                  ),
                                 ),
                               ),
                             ),
-                          ),
+                          ],
                         ),
-                      ],
+                      ),
                     ),
-                  ),
-                  const SizedBox(
-                    height: 10,
-                  )
-                ],
+                    Center(
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Center(
+                            child: ElevatedButton(
+                              onPressed: () {},
+                              child: const SubtitleTextWidget(
+                                label: "Appioment",
+                                fontWeight: FontWeight.bold,
+                                color: Colors.blue,
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                    const SizedBox(
+                      height: 10,
+                    ),
+                  ],
+                ),
               ),
             ),
           );

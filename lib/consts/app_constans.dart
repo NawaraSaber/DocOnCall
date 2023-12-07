@@ -6,8 +6,8 @@ class AppConstans {
   static String productImageUrl = AssetsManager.doctorLogo;
   static List<String> bannersImages = [
     AssetsManager.doctor1,
-    AssetsManager.doctor2,
-    AssetsManager.doctor3,
+    AssetsManager.doctor4,
+    AssetsManager.doctor6,
   ];
   static List<CategoryModel> categoriesList = [
     CategoryModel(

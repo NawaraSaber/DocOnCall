@@ -4,13 +4,13 @@ import 'package:doc_on_call/providers/product_provider.dart';
 import 'package:doc_on_call/providers/theme_provider.dart';
 import 'package:doc_on_call/providers/viewed_prod_provider.dart';
 import 'package:doc_on_call/providers/wishlist_provider.dart';
-import 'package:doc_on_call/root_screen.dart';
 import 'package:doc_on_call/screens/auth/forgot_password.dart';
 import 'package:doc_on_call/screens/auth/login.dart';
 import 'package:doc_on_call/screens/auth/regisrter.dart';
 import 'package:doc_on_call/screens/inner_screens/product_details.dart';
 import 'package:doc_on_call/screens/inner_screens/wishlist.dart';
 import 'package:doc_on_call/screens/search_screen.dart';
+import 'package:doc_on_call/screens/splash_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -48,7 +48,7 @@ class MyApp extends StatelessWidget {
           theme: Styles.themeData(
               isDarktheme: themeProvider.getIsDarkTheme, context: context),
           debugShowCheckedModeBanner: false,
-          home: const RootScreen(),
+          home: const SplashScreen(),
           routes: {
             ProductDetails.routName: (context) => const ProductDetails(),
             WishlistScreen.routName: (context) => const WishlistScreen(),
