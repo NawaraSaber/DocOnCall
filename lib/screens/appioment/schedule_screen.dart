@@ -42,7 +42,7 @@ class _ScheduleScreenState extends State<ScheduleScreen> {
               ),
             ),
             const SizedBox(
-              height: 20,
+              height: 10,
             ),
             Container(
               padding: const EdgeInsets.all(5),
@@ -72,7 +72,8 @@ class _ScheduleScreenState extends State<ScheduleScreen> {
                       child: SubtitleTextWidget(
                         label: "UpComing",
                         color: _buttonIndex == 0 ? Colors.white : Colors.black,
-                        fontSize: 16,
+                        fontSize: 12,
+                        fontStyle: FontStyle.italic,
                       ),
                     ),
                   ),
@@ -95,7 +96,8 @@ class _ScheduleScreenState extends State<ScheduleScreen> {
                       ),
                       child: SubtitleTextWidget(
                         label: "Completed",
-                        fontSize: 16,
+                        fontSize: 12,
+                        fontStyle: FontStyle.italic,
                         color: _buttonIndex == 1 ? Colors.white : Colors.black,
                       ),
                     ),
@@ -117,7 +119,8 @@ class _ScheduleScreenState extends State<ScheduleScreen> {
                       ),
                       child: SubtitleTextWidget(
                         label: "Canceled",
-                        fontSize: 16,
+                        fontStyle: FontStyle.italic,
+                        fontSize: 12,
                         color: _buttonIndex == 2 ? Colors.white : Colors.black,
                       ),
                     ),

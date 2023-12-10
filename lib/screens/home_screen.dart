@@ -1,7 +1,9 @@
 import 'package:card_swiper/card_swiper.dart';
+import 'package:doc_on_call/providers/theme_provider.dart';
 import 'package:doc_on_call/widgets/products/ctg_rounded_widget.dart';
 import 'package:doc_on_call/widgets/title_text.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import '../consts/app_constans.dart';
 import '../services/assets_manager.dart';
 import '../widgets/app_name_text.dart';
@@ -41,6 +43,8 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final themeProvider = Provider.of<ThemeProvider>(context);
+
     Size size = MediaQuery.of(context).size;
     return Scaffold(
       appBar: AppBar(
@@ -96,7 +100,7 @@ class HomeScreen extends StatelessWidget {
                   InkWell(
                     onTap: () {},
                     child: Container(
-                      padding: const EdgeInsets.all(20),
+                      padding: const EdgeInsets.all(10),
                       decoration: BoxDecoration(
                         color: Colors.lightBlue,
                         borderRadius: BorderRadius.circular(10),
@@ -113,7 +117,7 @@ class HomeScreen extends StatelessWidget {
                             child: const Icon(
                               Icons.add,
                               color: Colors.black,
-                              size: 35,
+                              size: 25,
                             ),
                           ),
                           const SizedBox(
@@ -143,10 +147,10 @@ class HomeScreen extends StatelessWidget {
                   InkWell(
                     onTap: () {},
                     child: Container(
-                      padding: const EdgeInsets.all(20),
+                      padding: const EdgeInsets.all(10),
                       decoration: BoxDecoration(
                         color: Colors.purple,
-                        borderRadius: BorderRadius.circular(10),
+                        borderRadius: BorderRadius.circular(8),
                       ),
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
@@ -160,7 +164,7 @@ class HomeScreen extends StatelessWidget {
                             child: const Icon(
                               Icons.home,
                               color: Colors.black,
-                              size: 35,
+                              size: 25,
                             ),
                           ),
                           const SizedBox(
@@ -193,14 +197,14 @@ class HomeScreen extends StatelessWidget {
                 height: 25,
               ),
               const Padding(
-                padding: EdgeInsets.only(left: 0),
+                padding: EdgeInsets.only(left: 5),
                 child: TitleTextWidget(
                   lablel: "What are your symptoms",
                   fontSize: 20,
                 ),
               ),
               SizedBox(
-                height: 70,
+                height: 55,
                 child: ListView.builder(
                   shrinkWrap: true,
                   scrollDirection: Axis.horizontal,
@@ -225,7 +229,7 @@ class HomeScreen extends StatelessWidget {
                         child: Text(
                           symptoms[index],
                           style: const TextStyle(
-                            fontSize: 16,
+                            fontSize: 14,
                             fontWeight: FontWeight.w500,
                             color: Colors.black54,
                           ),
@@ -238,9 +242,12 @@ class HomeScreen extends StatelessWidget {
               const SizedBox(
                 height: 15,
               ),
-              const TitleTextWidget(
-                lablel: "Popular specializations",
-                fontSize: 20,
+              const Padding(
+                padding: EdgeInsets.only(left: 5),
+                child: TitleTextWidget(
+                  lablel: "Popular specializations",
+                  fontSize: 20,
+                ),
               ),
               const SizedBox(
                 height: 15,
@@ -260,7 +267,7 @@ class HomeScreen extends StatelessWidget {
               ),
               const Padding(
                 padding: EdgeInsets.only(
-                  left: 0,
+                  left: 5,
                 ),
                 child: TitleTextWidget(
                   lablel: "Popular Doctors",
@@ -278,7 +285,7 @@ class HomeScreen extends StatelessWidget {
                   return InkWell(
                     onTap: () {},
                     child: Container(
-                      margin: const EdgeInsets.all(10),
+                      margin: const EdgeInsets.all(15),
                       padding: const EdgeInsets.symmetric(vertical: 15),
                       decoration: BoxDecoration(
                         color: Colors.white,
@@ -295,20 +302,20 @@ class HomeScreen extends StatelessWidget {
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                         children: [
                           CircleAvatar(
-                            radius: 30,
-                            backgroundImage:
-                                AssetImage("${images[index]}"),
+                            radius: 25,
+                            backgroundImage: AssetImage("${images[index]}"),
                           ),
                           Text(
                             "${names[index]}",
                             style: const TextStyle(
-                                fontSize: 18,
-                                fontWeight: FontWeight.w500,
+                                fontSize: 12,
+                                fontWeight: FontWeight.bold,
                                 color: Colors.black54),
                           ),
                           const Text(
                             "Therapist",
                             style: TextStyle(
+                              fontSize: 10,
                               color: Colors.black45,
                             ),
                           ),
@@ -320,7 +327,15 @@ class HomeScreen extends StatelessWidget {
                                 Icons.star,
                                 color: Colors.amber,
                               ),
-                              Text("${rates[index]}")
+                              Text(
+                                "${rates[index]}",
+                                style: TextStyle(
+                                  fontSize: 12,
+                                  color: themeProvider.getIsDarkTheme
+                                      ? const Color.fromARGB(255, 9, 3, 27)
+                                      : Colors.black,
+                                ),
+                              ),
                             ],
                           ),
                         ],

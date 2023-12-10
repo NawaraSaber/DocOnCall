@@ -28,7 +28,7 @@ class CategoryRoundedWidget extends StatelessWidget {
           ),
           SubtitleTextWidget(
             label: name,
-            fontSize: 13,
+            fontSize: 11,
             fontWeight: FontWeight.bold,
           )
         ],

@@ -75,7 +75,7 @@ class _RootScreenState extends State<RootScreen> {
           NavigationDestination(
             selectedIcon: Icon(IconlyBold.calendar),
             icon: Icon(IconlyLight.calendar),
-            label: "Appointments",
+            label: "Appointment",
           ),
           NavigationDestination(
             selectedIcon: Icon(IconlyBold.profile),
