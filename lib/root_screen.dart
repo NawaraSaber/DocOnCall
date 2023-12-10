@@ -1,4 +1,4 @@
-import 'package:doc_on_call/screens/appioment_screen.dart';
+import 'package:doc_on_call/screens/appioment/schedule_screen.dart';
 import 'package:doc_on_call/screens/chat_screen.dart';
 import 'package:doc_on_call/screens/home_screen.dart';
 import 'package:doc_on_call/screens/profile_screen.dart';
@@ -24,7 +24,7 @@ class _RootScreenState extends State<RootScreen> {
     ),
     const SearchScreen(),
     const ChatScreen(),
-    const AppointmentScreen(),
+    const ScheduleScreen(),
     const ProfileScreen(
       title: 'DocOnCall',
     ),
@@ -73,7 +73,7 @@ class _RootScreenState extends State<RootScreen> {
             label: "Message",
           ),
           NavigationDestination(
-            selectedIcon: Icon(IconlyBold.bag2),
+            selectedIcon: Icon(IconlyBold.calendar),
             icon: Icon(IconlyLight.calendar),
             label: "Appointments",
           ),
