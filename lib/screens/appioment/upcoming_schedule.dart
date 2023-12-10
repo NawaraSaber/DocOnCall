@@ -79,7 +79,7 @@ class UpComingSchedule extends StatelessWidget {
                             width: 5,
                           ),
                           SubtitleTextWidget(
-                            label: "23/12/2023",
+                            label: "27/12/2023",
                             fontSize: 14,
                           ),
                         ],
@@ -93,7 +93,7 @@ class UpComingSchedule extends StatelessWidget {
                             width: 5,
                           ),
                           SubtitleTextWidget(
-                            label: "7:30 PM",
+                            label: "5:15 PM",
                             fontSize: 14,
                           ),
                         ],
@@ -130,7 +130,7 @@ class UpComingSchedule extends StatelessWidget {
                       ),
                       ElevatedButton(
                         onPressed: () {},
-                        child: const SubtitleTextWidget(label: "Reschedule"),
+                        child: const SubtitleTextWidget(label: "Done"),
                       ),
                     ],
                   ),
@@ -258,7 +258,7 @@ class UpComingSchedule extends StatelessWidget {
                       ),
                       ElevatedButton(
                         onPressed: () {},
-                        child: const SubtitleTextWidget(label: "Reschedule"),
+                        child: const SubtitleTextWidget(label: "Done"),
                       ),
                     ],
                   ),
@@ -335,7 +335,7 @@ class UpComingSchedule extends StatelessWidget {
                             width: 5,
                           ),
                           SubtitleTextWidget(
-                            label: "23/12/2023",
+                            label: "1/1/2024",
                             fontSize: 14,
                           ),
                         ],
@@ -349,7 +349,7 @@ class UpComingSchedule extends StatelessWidget {
                             width: 5,
                           ),
                           SubtitleTextWidget(
-                            label: "7:30 PM",
+                            label: "9:45 PM",
                             fontSize: 14,
                           ),
                         ],
@@ -386,7 +386,7 @@ class UpComingSchedule extends StatelessWidget {
                       ),
                       ElevatedButton(
                         onPressed: () {},
-                        child: const SubtitleTextWidget(label: "Reschedule"),
+                        child: const SubtitleTextWidget(label: "Done"),
                       ),
                     ],
                   ),
