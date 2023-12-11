@@ -8,12 +8,13 @@ class SplashScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return AnimatedSplashScreen(
+      curve: Easing.standard,
       animationDuration: Durations.medium1,
       duration: 1500,
       backgroundColor: Colors.lightBlue,
-      splash: 'assets/images/doc/recevie.jpg', 
+      splash: "assets/images/splash.png",
       nextScreen: const RootScreen(),
-      splashTransition: SplashTransition.rotationTransition,
+      splashTransition: SplashTransition.slideTransition,
     );
   }
 }

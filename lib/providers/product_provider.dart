@@ -43,7 +43,7 @@ class ProductProvider with ChangeNotifier {
       productCategory: "Cardiologist",
       productDescription:
           "Snap on smile \n- it's removable and very thin. So it will be very fine on your teeth.\n- You can choose on of many shades.\n- No pain.\n- No need for adhesive (self retention) \n\n For more information and details, kindly send us a message or call us on (01018860333)",
-      productImage: "https://th.bing.com/th/id/OIP.dpYyYXpkyGTvTF1ZnEdmJgAAAA?w=157&h=168&c=7&r=0&o=5&pid=1.7",
+      productImage: "https://images.pexels.com/photos/5214958/pexels-photo-5214958.jpeg?auto=compress&cs=tinysrgb&w=400",
       productQuantity: "10",
     ),
 
@@ -55,7 +55,7 @@ class ProductProvider with ChangeNotifier {
       productDescription:
           " Clear aligner can help with :\n Crowded teeth, Teeth spacing, Teeth protrusion, Open bite, Deep bite \n\nFor more information and details, kindly send us a message or call us on (01018860333)",
       productImage:
-          "https://th.bing.com/th/id/OIP.rmCktVrrX0bPOoctKa8o5AAAAA?w=133&h=180&c=7&r=0&o=5&pid=1.7",
+          "https://images.pexels.com/photos/6303591/pexels-photo-6303591.jpeg?auto=compress&cs=tinysrgb&w=400",
       productQuantity: "10",
     ),
     ProductModel(
@@ -65,7 +65,7 @@ class ProductProvider with ChangeNotifier {
       productCategory: "neurologist",
       productDescription:
           "Snap on smile \n- it's removable and very thin. So it will be very fine on your teeth.\n- You can choose on of many shades.\n- No pain.\n- No need for adhesive (self retention) \n\n For more information and details, kindly send us a message or call us on (01018860333)",
-      productImage: "https://th.bing.com/th/id/OIP.mCDRHbkfOJwhbvN55WgrPAHaHa?w=176&h=180&c=7&r=0&o=5&pid=1.7",
+      productImage: "https://images.pexels.com/photos/8460157/pexels-photo-8460157.jpeg?auto=compress&cs=tinysrgb&w=400",
       productQuantity: "10",
     ),
     ProductModel(
@@ -95,7 +95,7 @@ class ProductProvider with ChangeNotifier {
       productCategory: "Orthopedist",
       productDescription:
           "Snap on smile \n- it's removable and very thin. So it will be very fine on your teeth.\n- You can choose on of many shades.\n- No pain.\n- No need for adhesive (self retention) \n\n For more information and details, kindly send us a message or call us on (01018860333)",
-      productImage: "https://i.ytimg.com/vi/xFpCnupnnts/maxresdefault.jpg",
+      productImage: "https://images.pexels.com/photos/3714743/pexels-photo-3714743.jpeg?auto=compress&cs=tinysrgb&w=400",
       productQuantity: "10",
     ),
     ProductModel(

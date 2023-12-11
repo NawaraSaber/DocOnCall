@@ -110,6 +110,7 @@ class _SearchScreenState extends State<SearchScreen> {
                   )),
                 ],
                 Container(
+                  padding: const EdgeInsets.all(10),
                   child: DynamicHeightGridView(
                     shrinkWrap: true,
                     physics: const NeverScrollableScrollPhysics(),

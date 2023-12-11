@@ -9,6 +9,7 @@ class AssetsManager {
   static String mapRounded = "$imagesPath/rounded_map.png";
   static String warning = "$imagesPath/warning.png";
   static String error = "$imagesPath/error.png";
+  static String splashImage = "$imagesPath/splash.png";
   static String addressMap = "$imagesPath/address_map.png";
   static String emptySearch = "$imagesPath/empty_search.png";
   static String successful = "$imagesPath/successful.png";
