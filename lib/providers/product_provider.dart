@@ -59,7 +59,7 @@ class ProductProvider with ChangeNotifier {
       productQuantity: "10",
     ),
     ProductModel(
-      specialtiesID: 'neurologist',
+      specialtiesID: 'Neurologist',
       productTitle: "Mohamed Ebid",
       productPrice: "300 EPG",
       productCategory: "neurologist",

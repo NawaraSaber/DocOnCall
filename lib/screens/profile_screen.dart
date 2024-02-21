@@ -111,13 +111,13 @@ class ProfileScreen extends StatelessWidget {
                   },
                 ),
                 CustomListTitle(
-                  imagePath: AssetsManager.address,
-                  text: "Address",
+                  imagePath: AssetsManager.about,
+                  text: "About Us",
                   function: () {},
                 ),
                 CustomListTitle(
-                  imagePath: AssetsManager.about,
-                  text: "About Us",
+                  imagePath: AssetsManager.wishlist,
+                  text: "Whishlist Doctor",
                   function: () async {
                     await Navigator.pushNamed(context, WishlistScreen.routName);
                   },

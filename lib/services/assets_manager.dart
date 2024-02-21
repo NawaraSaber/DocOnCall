@@ -29,6 +29,7 @@ class AssetsManager {
   static String pharmacy = "$profileImagesPath/pharmacy.png";
   static String svg = "$profileImagesPath/svg.png";
   static String capsules = "$profileImagesPath/capsules.png";
+  static String wishlist = "$profileImagesPath/wishlist.png";
 
   // Doc path
   static String appoiment = "$docImagesPath/Appoiment.jpg";

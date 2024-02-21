@@ -7,7 +7,6 @@ import '../../widgets/app_name_text.dart';
 import '../../widgets/products/heart_btn.dart';
 import '../../widgets/subtitle_text.dart';
 import '../../widgets/title_text.dart';
-//import 'package:flutter_iconly/flutter_iconly.dart';
 
 class ProductDetails extends StatefulWidget {
   static const routName = '/ProductDetails';
@@ -38,7 +37,7 @@ class _ProductDetailsState extends State<ProductDetails> {
                 children: [
                   FancyShimmerImage(
                     imageUrl: getCurrProduct.productImage,
-                    height: size.height * 0.38,
+                    height: size.height * 0.50,
                     width: double.infinity,
                     boxFit: BoxFit.contain,
                   ),

@@ -21,7 +21,7 @@ class WishlistScreen extends StatelessWidget {
                 title: "Your Wishlist is empty",
                 subtitle:
                     "Looks like you didn't add anything yet to your wishlist \ngo ahead and start shopping",
-                buttonText: "Shopping Now"),
+                buttonText: "Appoiment Now"),
           )
         : Scaffold(
             appBar: AppBar(
