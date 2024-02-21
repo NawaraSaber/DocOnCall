@@ -2,7 +2,6 @@ import 'package:doc_on_call/screens/inner_screens/product_details.dart';
 import 'package:fancy_shimmer_image/fancy_shimmer_image.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-//import 'package:flutter_iconly/flutter_iconly.dart';
 import '../../providers/cart_provider.dart';
 import '../../providers/product_provider.dart';
 import '../../providers/viewed_prod_provider.dart';
