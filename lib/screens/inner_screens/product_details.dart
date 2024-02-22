@@ -37,7 +37,7 @@ class _ProductDetailsState extends State<ProductDetails> {
                 children: [
                   FancyShimmerImage(
                     imageUrl: getCurrProduct.productImage,
-                    height: size.height * 0.50,
+                    height: size.height * 0.38,
                     width: double.infinity,
                     boxFit: BoxFit.contain,
                   ),
@@ -53,11 +53,13 @@ class _ProductDetailsState extends State<ProductDetails> {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Flexible(
-                             // flex: 5,
+                              // flex: 5,
                               child: Text(
                                 getCurrProduct.productTitle,
                                 style: const TextStyle(
-                                    fontSize: 20, fontWeight: FontWeight.bold),
+                                  fontSize: 20,
+                                  fontWeight: FontWeight.bold,
+                                ),
                               ),
                             ),
                             const SizedBox(
@@ -105,7 +107,8 @@ class _ProductDetailsState extends State<ProductDetails> {
                                         return;
                                       }
                                       cartProvider.addProductToCart(
-                                          productId: getCurrProduct.specialtiesID);
+                                          productId:
+                                              getCurrProduct.specialtiesID);
                                     },
                                     icon: Icon(
                                       cartProvider.isProductInCart(
@@ -118,8 +121,8 @@ class _ProductDetailsState extends State<ProductDetails> {
                                       cartProvider.isProductInCart(
                                               productId:
                                                   getCurrProduct.specialtiesID)
-                                          ? "In Cart"
-                                          : "Add to cart",
+                                          ? "Succssefully"
+                                          : "Book",
                                     ),
                                   ),
                                 ),

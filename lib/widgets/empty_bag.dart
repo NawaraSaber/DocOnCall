@@ -1,3 +1,4 @@
+import 'package:doc_on_call/screens/search_screen.dart';
 import 'package:doc_on_call/widgets/subtitle_text.dart';
 import 'package:doc_on_call/widgets/title_text.dart';
 import 'package:flutter/material.dart';
@@ -24,7 +25,7 @@ class EmptyBagWidget extends StatelessWidget {
               height: size.height * 0.35,
               width: double.infinity,
             ),
-             const TitleTextWidget(
+            const TitleTextWidget(
               lablel: "WhoOops!",
               fontSize: 40,
               color: Colors.red,
@@ -32,8 +33,8 @@ class EmptyBagWidget extends StatelessWidget {
             const SizedBox(
               height: 20,
             ),
-             const SubtitleTextWidget(
-              label: "Your cart is Empty!",
+            const SubtitleTextWidget(
+              label: "Your Booking page is Empty!",
               fontWeight: FontWeight.w600,
               fontSize: 25,
             ),
@@ -54,7 +55,9 @@ class EmptyBagWidget extends StatelessWidget {
             ElevatedButton(
               style:
                   ElevatedButton.styleFrom(padding: const EdgeInsets.all(15)),
-              onPressed: () {},
+              onPressed: () {
+                Navigator.pushNamed(context, SearchScreen.routeName);
+              },
               child: Text(
                 buttonText,
                 style: const TextStyle(fontSize: 20),

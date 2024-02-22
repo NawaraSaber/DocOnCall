@@ -18,9 +18,9 @@ class WishlistScreen extends StatelessWidget {
         ? Scaffold(
             body: EmptyBagWidget(
                 imagePath: AssetsManager.emptySearch,
-                title: "Your Wishlist is empty",
+                title: "Your Booking page is Empty!",
                 subtitle:
-                    "Looks like you didn't add anything yet to your wishlist \ngo ahead and start shopping",
+                    "Looks like you didn't add anything yet to your wishlist \ngo ahead and start booking your doctor",
                 buttonText: "Appoiment Now"),
           )
         : Scaffold(

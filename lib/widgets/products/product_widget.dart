@@ -53,7 +53,7 @@ class _ProductWidgetState extends State<ProductWidget> {
                       child: FancyShimmerImage(
                         imageUrl: getCurrProduct.productImage,
                         width: double.infinity,
-                        height: size.height * 0.50,
+                        height: size.height * 0.22,
                       ),
                     ),
                     const SizedBox(
@@ -67,13 +67,13 @@ class _ProductWidgetState extends State<ProductWidget> {
                             flex: 5,
                             child: TitleTextWidget(
                               lablel: getCurrProduct.productTitle,
-                              fontSize: 23,
+                              fontSize: 20,
                               maxLines: 2,
                             ),
                           ),
-                          const SizedBox(
-                            width: 120,
-                          ),
+                          // const SizedBox(
+                          //   width: 120,
+                          // ),
                           Flexible(
                             flex: 2,
                             child: HeartButtonWidget(
@@ -87,29 +87,26 @@ class _ProductWidgetState extends State<ProductWidget> {
                       child: Padding(
                         padding: const EdgeInsets.symmetric(horizontal: 5),
                         child: Row(
-                          mainAxisAlignment: MainAxisAlignment.start,
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             Flexible(
                               flex: 5,
                               child: SubtitleTextWidget(
                                 label: getCurrProduct.specialtiesID,
-                                fontSize: 20,
+                                fontSize: 15,
                                 fontWeight: FontWeight.bold,
                               ),
                             ),
                             const SizedBox(
-                              width: 90,
+                              width: 50,
                             ),
                             Flexible(
                               flex: 3,
                               child: SubtitleTextWidget(
                                 label: "${getCurrProduct.productPrice} ",
-                                fontSize: 20,
+                                fontSize: 12,
                                 fontWeight: FontWeight.bold,
                               ),
-                            ),
-                            const SizedBox(
-                              width: 30,
                             ),
                             Flexible(
                               child: Material(
@@ -148,10 +145,10 @@ class _ProductWidgetState extends State<ProductWidget> {
                           Center(
                             child: ElevatedButton(
                               onPressed: () {
-                                // Navigator.pushNamed(
-                                //   context,
-                                //   ProductDetails.routName,
-                                // );
+                                Navigator.pushNamed(
+                                  context,
+                                  ProductDetails.routName,
+                                );
                               },
                               child: const SubtitleTextWidget(
                                 label: "Appioment",
