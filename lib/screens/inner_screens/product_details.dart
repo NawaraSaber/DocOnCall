@@ -7,7 +7,6 @@ import '../../widgets/app_name_text.dart';
 import '../../widgets/products/heart_btn.dart';
 import '../../widgets/subtitle_text.dart';
 import '../../widgets/title_text.dart';
-//import 'package:flutter_iconly/flutter_iconly.dart';
 
 class ProductDetails extends StatefulWidget {
   static const routName = '/ProductDetails';
@@ -54,11 +53,13 @@ class _ProductDetailsState extends State<ProductDetails> {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Flexible(
-                             // flex: 5,
+                              // flex: 5,
                               child: Text(
                                 getCurrProduct.productTitle,
                                 style: const TextStyle(
-                                    fontSize: 20, fontWeight: FontWeight.bold),
+                                  fontSize: 20,
+                                  fontWeight: FontWeight.bold,
+                                ),
                               ),
                             ),
                             const SizedBox(
@@ -106,7 +107,8 @@ class _ProductDetailsState extends State<ProductDetails> {
                                         return;
                                       }
                                       cartProvider.addProductToCart(
-                                          productId: getCurrProduct.specialtiesID);
+                                          productId:
+                                              getCurrProduct.specialtiesID);
                                     },
                                     icon: Icon(
                                       cartProvider.isProductInCart(
@@ -119,8 +121,8 @@ class _ProductDetailsState extends State<ProductDetails> {
                                       cartProvider.isProductInCart(
                                               productId:
                                                   getCurrProduct.specialtiesID)
-                                          ? "In Cart"
-                                          : "Add to cart",
+                                          ? "Succssefully"
+                                          : "Book",
                                     ),
                                   ),
                                 ),

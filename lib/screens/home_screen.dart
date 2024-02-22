@@ -1,5 +1,6 @@
 import 'package:card_swiper/card_swiper.dart';
 import 'package:doc_on_call/providers/theme_provider.dart';
+import 'package:doc_on_call/screens/search_screen.dart';
 import 'package:doc_on_call/widgets/products/ctg_rounded_widget.dart';
 import 'package:doc_on_call/widgets/title_text.dart';
 import 'package:flutter/material.dart';
@@ -98,7 +99,12 @@ class HomeScreen extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
                   InkWell(
-                    onTap: () {},
+                    onTap: () {
+                      Navigator.pushNamed(
+                        context,
+                        SearchScreen.routeName,
+                      );
+                    },
                     child: Container(
                       padding: const EdgeInsets.all(10),
                       decoration: BoxDecoration(
@@ -145,7 +151,12 @@ class HomeScreen extends StatelessWidget {
                     ),
                   ),
                   InkWell(
-                    onTap: () {},
+                    onTap: () {
+                      Navigator.pushNamed(
+                        context,
+                        SearchScreen.routeName,
+                      );
+                    },
                     child: Container(
                       padding: const EdgeInsets.all(10),
                       decoration: BoxDecoration(
@@ -365,6 +376,3 @@ class HomeScreen extends StatelessWidget {
     );
   }
 }
-
-
-//////////////

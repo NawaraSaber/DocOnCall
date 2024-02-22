@@ -1,10 +1,6 @@
 import 'package:dynamic_height_grid_view/dynamic_height_grid_view.dart';
-//import 'package:dream_house_users_ar/widgets/subtitle_text.dart';
-//import 'package:dream_house_users_ar/widgets/title_text.dart';
-//import 'package:dream_house_users_ar/widgets/title_text.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-
 import '../../providers/viewed_prod_provider.dart';
 import '../../services/assets_manager.dart';
 import '../../widgets/empty_bag.dart';
@@ -24,7 +20,7 @@ class ViewedRecentlyScreen extends StatelessWidget {
                 title: "Your Viewed Recently is empty",
                 subtitle:
                     "Looks like you didn't add anything yet to your viewed recently , Go ahead and start shopping",
-                buttonText: "Shopping Now"),
+                buttonText: "Booking Now"),
           )
         : Scaffold(
             appBar: AppBar(

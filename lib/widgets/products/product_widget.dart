@@ -1,7 +1,7 @@
+import 'package:doc_on_call/screens/inner_screens/product_details.dart';
 import 'package:fancy_shimmer_image/fancy_shimmer_image.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-//import 'package:flutter_iconly/flutter_iconly.dart';
 import '../../providers/cart_provider.dart';
 import '../../providers/product_provider.dart';
 import '../../providers/viewed_prod_provider.dart';
@@ -39,8 +39,11 @@ class _ProductWidgetState extends State<ProductWidget> {
               onTap: () async {
                 viewedProvider.addProductToHistory(
                     productId: getCurrProduct.specialtiesID);
-                // await Navigator.pushNamed(context, ProductDetails.routName,
-                //     arguments: getCurrProduct.productID);
+                await Navigator.pushNamed(
+                  context,
+                  ProductDetails.routName,
+                );
+                // arguments: getCurrProduct.productID);
               },
               child: Center(
                 child: Column(
@@ -58,16 +61,19 @@ class _ProductWidgetState extends State<ProductWidget> {
                     ),
                     Center(
                       child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        mainAxisAlignment: MainAxisAlignment.start,
                         children: [
                           Flexible(
                             flex: 5,
                             child: TitleTextWidget(
                               lablel: getCurrProduct.productTitle,
-                              fontSize: 22,
+                              fontSize: 20,
                               maxLines: 2,
                             ),
                           ),
+                          // const SizedBox(
+                          //   width: 120,
+                          // ),
                           Flexible(
                             flex: 2,
                             child: HeartButtonWidget(
@@ -81,29 +87,43 @@ class _ProductWidgetState extends State<ProductWidget> {
                       child: Padding(
                         padding: const EdgeInsets.symmetric(horizontal: 5),
                         child: Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
+                            Flexible(
+                              flex: 5,
+                              child: SubtitleTextWidget(
+                                label: getCurrProduct.specialtiesID,
+                                fontSize: 15,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                            const SizedBox(
+                              width: 50,
+                            ),
                             Flexible(
                               flex: 3,
                               child: SubtitleTextWidget(
                                 label: "${getCurrProduct.productPrice} ",
-                                fontSize: 22,
+                                fontSize: 12,
+                                fontWeight: FontWeight.bold,
                               ),
                             ),
                             Flexible(
                               child: Material(
                                 borderRadius: BorderRadius.circular(13.0),
-                                color: Colors.lightBlue,
+                                color: Colors.green,
                                 child: InkWell(
                                   splashColor: Colors.red,
                                   borderRadius: BorderRadius.circular(13.0),
                                   onTap: () {
                                     if (cartProvider.isProductInCart(
-                                        productId: getCurrProduct.specialtiesID)) {
+                                        productId:
+                                            getCurrProduct.specialtiesID)) {
                                       return;
                                     }
                                     cartProvider.addProductToCart(
-                                        productId: getCurrProduct.specialtiesID);
+                                        productId:
+                                            getCurrProduct.specialtiesID);
                                   },
                                   child: const Padding(
                                     padding: EdgeInsets.all(5.0),
@@ -115,13 +135,21 @@ class _ProductWidgetState extends State<ProductWidget> {
                         ),
                       ),
                     ),
+                    const SizedBox(
+                      height: 15,
+                    ),
                     Center(
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           Center(
                             child: ElevatedButton(
-                              onPressed: () {},
+                              onPressed: () {
+                                Navigator.pushNamed(
+                                  context,
+                                  ProductDetails.routName,
+                                );
+                              },
                               child: const SubtitleTextWidget(
                                 label: "Appioment",
                                 fontWeight: FontWeight.bold,
@@ -133,7 +161,7 @@ class _ProductWidgetState extends State<ProductWidget> {
                       ),
                     ),
                     const SizedBox(
-                      height: 10,
+                      height: 15,
                     ),
                   ],
                 ),

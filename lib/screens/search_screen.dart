@@ -124,7 +124,7 @@ class _SearchScreenState extends State<SearchScreen> {
                             : productList[index].specialtiesID,
                       );
                     }),
-                    crossAxisCount: 1,
+                    crossAxisCount: 2,
                   ),
                 ),
               ],
