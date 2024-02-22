@@ -9,6 +9,7 @@ import 'package:doc_on_call/screens/appioment/compelet_schedule.dart';
 import 'package:doc_on_call/screens/auth/forgot_password.dart';
 import 'package:doc_on_call/screens/auth/login.dart';
 import 'package:doc_on_call/screens/auth/regisrter.dart';
+import 'package:doc_on_call/screens/inner_screens/histroy.dart';
 import 'package:doc_on_call/screens/inner_screens/product_details.dart';
 import 'package:doc_on_call/screens/inner_screens/wishlist.dart';
 import 'package:doc_on_call/screens/search_screen.dart';
@@ -54,8 +55,8 @@ class MyApp extends StatelessWidget {
           routes: {
             ProductDetails.routName: (context) => const ProductDetails(),
             WishlistScreen.routName: (context) => const WishlistScreen(),
-            // ViewedRecentlyScreen.routName: (context) =>
-            //     const ViewedRecentlyScreen(),
+            HistroyScreen.routName: (context) =>
+                const HistroyScreen(),
             RegisterScreen.routName: (context) => const RegisterScreen(),
             LoginScreen.routName: (context) => const LoginScreen(),
             // OrdersScreenFree.routeName: (context) => const OrdersScreenFree(),

@@ -1,3 +1,4 @@
+import 'package:doc_on_call/models/chatusers_model.dart';
 import 'package:doc_on_call/screens/chatdetail_screen.dart';
 import 'package:flutter/material.dart';
 
@@ -8,14 +9,17 @@ class ChatUsersList extends StatefulWidget {
   String image;
   String time;
   bool isMessageRead;
-  ChatUsersList(
-      {super.key,
-      required this.name,
-      required this.messageText,
-      required this.image,
-      required this.time,
-      required this.isMessageRead});
+  ChatUsersList({
+    super.key,
+    required this.name,
+    required this.messageText,
+    required this.image,
+    required this.time,
+    required this.isMessageRead,
+  });
+
   @override
+
   // ignore: library_private_types_in_public_api
   _ChatUsersListState createState() => _ChatUsersListState();
 }
@@ -26,7 +30,15 @@ class _ChatUsersListState extends State<ChatUsersList> {
     return GestureDetector(
       onTap: () {
         Navigator.push(context, MaterialPageRoute(builder: (context) {
-          return const ChatDetail();
+          var chatUsersModel = ChatUsersModel(
+              name: widget.name,
+              messageText: widget.messageText,
+              image: widget.image,
+              time: widget.time);
+
+          return ChatDetail(
+            chatUsersModel: chatUsersModel,
+          );
         }));
       },
       child: Container(

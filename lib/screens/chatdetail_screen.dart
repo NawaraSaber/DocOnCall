@@ -1,8 +1,12 @@
 import 'package:doc_on_call/models/chatmessage_model.dart';
+import 'package:doc_on_call/models/chatusers_model.dart';
 import 'package:flutter/material.dart';
 
+// ignore: must_be_immutable
 class ChatDetail extends StatefulWidget {
-  const ChatDetail({super.key});
+  ChatDetail({super.key, required this.chatUsersModel});
+
+  ChatUsersModel chatUsersModel;
 
   @override
   State<ChatDetail> createState() => _ChatDetailState();
@@ -43,8 +47,8 @@ class _ChatDetailState extends State<ChatDetail> {
                 const SizedBox(
                   width: 2,
                 ),
-                const CircleAvatar(
-                  backgroundImage: AssetImage("assets/images/doc/doctor1.jpg"),
+                CircleAvatar(
+                  backgroundImage: AssetImage(widget.chatUsersModel.image),
                   maxRadius: 20,
                 ),
                 const SizedBox(
@@ -56,20 +60,21 @@ class _ChatDetailState extends State<ChatDetail> {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     mainAxisAlignment: MainAxisAlignment.center,
-                    children: const <Widget>[
+                    children: <Widget>[
                       Text(
-                        "Esraa AbdelMonem",
-                        style: TextStyle(
+                        widget.chatUsersModel.name,
+                        style: const TextStyle(
                             color: Colors.white,
                             fontSize: 16,
                             fontWeight: FontWeight.w600),
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 6,
                       ),
                       Text(
-                        "Online",
-                        style: TextStyle(color: Colors.white, fontSize: 13),
+                        widget.chatUsersModel.time,
+                        style:
+                            const TextStyle(color: Colors.white, fontSize: 13),
                       ),
                     ],
                   ),

@@ -1,10 +1,9 @@
-import 'package:doc_on_call/screens/search_screen.dart';
 import 'package:doc_on_call/widgets/subtitle_text.dart';
 import 'package:doc_on_call/widgets/title_text.dart';
 import 'package:flutter/material.dart';
 
-class EmptyBagWidget extends StatelessWidget {
-  const EmptyBagWidget(
+class EmptyHistroy extends StatelessWidget {
+  const EmptyHistroy(
       {super.key,
       required this.imagePath,
       required this.title,
@@ -20,6 +19,9 @@ class EmptyBagWidget extends StatelessWidget {
           body: SingleChildScrollView(
         child: Column(
           children: [
+            const SizedBox(
+              height: 60,
+            ),
             Image.asset(
               imagePath,
               height: size.height * 0.30,
@@ -37,7 +39,7 @@ class EmptyBagWidget extends StatelessWidget {
               height: 20,
             ),
             const SubtitleTextWidget(
-              label: "Your Booking page is Empty!",
+              label: "Your History is Empty!",
               fontWeight: FontWeight.w600,
               fontSize: 25,
             ),
@@ -59,7 +61,7 @@ class EmptyBagWidget extends StatelessWidget {
               style:
                   ElevatedButton.styleFrom(padding: const EdgeInsets.all(15)),
               onPressed: () {
-                Navigator.pushNamed(context, SearchScreen.routeName);
+                // Navigator.pushNamed(context, SearchScreen.routeName);
               },
               child: Text(
                 buttonText,

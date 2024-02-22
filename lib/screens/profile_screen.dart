@@ -1,4 +1,5 @@
 import 'package:doc_on_call/screens/auth/login.dart';
+import 'package:doc_on_call/screens/inner_screens/histroy.dart';
 import 'package:doc_on_call/screens/inner_screens/wishlist.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_iconly/flutter_iconly.dart';
@@ -99,7 +100,7 @@ class ProfileScreen extends StatelessWidget {
                   imagePath: AssetsManager.history,
                   text: "History",
                   function: () async {
-                    // await Navigator.pushNamed(context, WishlistScreen.routName);
+                    await Navigator.pushNamed(context, HistroyScreen.routName);
                   },
                 ),
                 CustomListTitle(
