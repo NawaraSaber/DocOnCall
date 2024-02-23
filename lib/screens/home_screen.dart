@@ -1,7 +1,8 @@
-import 'package:card_swiper/card_swiper.dart';
 import 'package:doc_on_call/providers/theme_provider.dart';
 import 'package:doc_on_call/screens/search_screen.dart';
+import 'package:doc_on_call/screens/specialization.dart';
 import 'package:doc_on_call/widgets/products/ctg_rounded_widget.dart';
+import 'package:doc_on_call/widgets/subtitle_text.dart';
 import 'package:doc_on_call/widgets/title_text.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -46,7 +47,7 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     final themeProvider = Provider.of<ThemeProvider>(context);
 
-    Size size = MediaQuery.of(context).size;
+    //Size size = MediaQuery.of(context).size;
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Theme.of(context).scaffoldBackgroundColor,
@@ -60,6 +61,7 @@ class HomeScreen extends StatelessWidget {
       ),
       body: Padding(
         padding: const EdgeInsets.symmetric(
+          vertical: 12,
           horizontal: 12,
         ),
         child: SingleChildScrollView(
@@ -67,33 +69,17 @@ class HomeScreen extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             //mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              SizedBox(
-                height: size.height * 0.15,
-                child: ClipRRect(
-                  borderRadius: const BorderRadius.only(
-                    topLeft: Radius.circular(12.0),
-                    topRight: Radius.circular(12.0),
+              const Row(
+                mainAxisAlignment: MainAxisAlignment.start,
+                children: [
+                  SubtitleTextWidget(
+                    label: "Book Appointment",
+                    fontWeight: FontWeight.bold,
                   ),
-                  child: Swiper(
-                    itemBuilder: (BuildContext context, int index) {
-                      return Image.asset(
-                        AppConstans.bannersImages[index],
-                        fit: BoxFit.fitHeight,
-                      );
-                    },
-                    autoplay: true,
-                    itemCount: AppConstans.bannersImages.length,
-                    pagination: const SwiperPagination(
-                        alignment: Alignment.bottomCenter,
-                        builder: DotSwiperPaginationBuilder(
-                          color: Colors.white,
-                          activeColor: Colors.red,
-                        )),
-                  ),
-                ),
+                ],
               ),
               const SizedBox(
-                height: 25,
+                height: 15,
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -108,7 +94,7 @@ class HomeScreen extends StatelessWidget {
                     child: Container(
                       padding: const EdgeInsets.all(10),
                       decoration: BoxDecoration(
-                        color: Colors.lightBlue,
+                        color: const Color.fromARGB(255, 111, 2, 161),
                         borderRadius: BorderRadius.circular(10),
                       ),
                       child: Column(
@@ -160,7 +146,7 @@ class HomeScreen extends StatelessWidget {
                     child: Container(
                       padding: const EdgeInsets.all(10),
                       decoration: BoxDecoration(
-                        color: Colors.purple,
+                        color: const Color.fromARGB(255, 111, 2, 161),
                         borderRadius: BorderRadius.circular(8),
                       ),
                       child: Column(
@@ -250,36 +236,49 @@ class HomeScreen extends StatelessWidget {
                   },
                 ),
               ),
-              const SizedBox(
-                height: 15,
-              ),
-              const Padding(
-                padding: EdgeInsets.only(left: 5),
-                child: TitleTextWidget(
-                  lablel: "Popular specializations",
-                  fontSize: 20,
-                ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  const Padding(
+                    padding: EdgeInsets.only(left: 5),
+                    child: TitleTextWidget(
+                      lablel: "Popular specializations",
+                      fontSize: 20,
+                    ),
+                  ),
+                  TextButton(
+                    onPressed: () {
+                      Navigator.pushNamed(context, SpecializationsScreen.routName);
+                    },
+                    child: const SubtitleTextWidget(
+                      label: "See all",
+                      textDecoration: TextDecoration.underline,
+                      fontStyle: FontStyle.italic,
+                    ),
+                  ),
+                ],
               ),
               const SizedBox(
                 height: 15,
               ),
               GridView.count(
-                  shrinkWrap: true,
-                  physics: const NeverScrollableScrollPhysics(),
-                  crossAxisCount: 4,
-                  children:
-                      List.generate(AppConstans.categoriesList.length, (index) {
+                shrinkWrap: true,
+                physics: const NeverScrollableScrollPhysics(),
+                crossAxisCount: 4,
+                children: List.generate(
+                  AppConstans.categoriesList.length,
+                  (index) {
                     return CategoryRoundedWidget(
-                        image: AppConstans.categoriesList[index].image,
-                        name: AppConstans.categoriesList[index].name);
-                  })),
-              const SizedBox(
-                height: 25,
-              ),
-              const Padding(
-                padding: EdgeInsets.only(
-                  left: 5,
+                      image: AppConstans.categoriesList[index].image,
+                      name: AppConstans.categoriesList[index].name,
+                    );
+                  },
                 ),
+              ),
+               Exception caught by rendering library ═════════════════════════════════
+RenderBox was not laid out: RenderTransform#be719 relayoutBoundary=up4
+'package:flutter/src/rendering/box.dart':
+Failed assertion: line 1972 pos 12: 'hasSize'
                 child: TitleTextWidget(
                   lablel: "Popular Doctors",
                   fontSize: 20,

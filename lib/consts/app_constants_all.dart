@@ -2,14 +2,14 @@ import 'package:doc_on_call/models/categories_model.dart';
 
 import '../services/assets_manager.dart';
 
-class AppConstans {
+class AppConstansAll {
   static String productImageUrl = AssetsManager.doctorLogo;
   static List<String> bannersImages = [
     AssetsManager.doctor1,
     AssetsManager.doctor4,
     AssetsManager.doctor6,
   ];
-  static List<CategoryModel> categoriesList = [
+  static List<CategoryModel> categoriesListAll = [
     CategoryModel(
         id: AssetsManager.pediatrics,
         image: AssetsManager.pediatrics,
@@ -26,21 +26,21 @@ class AppConstans {
         id: AssetsManager.heart,
         image: AssetsManager.heart,
         name: "Cardiologist"),
-    // CategoryModel(
-    //     id: AssetsManager.neurologist,
-    //     image: AssetsManager.neurologist,
-    //     name: "Neurologist"),
-    // CategoryModel(
-    //     id: AssetsManager.dermatologist,
-    //     image: AssetsManager.dermatologist,
-    //     name: "Dermatologist"),
-    // CategoryModel(
-    //     id: AssetsManager.liver,
-    //     image: AssetsManager.liver,
-    //     name: "Hepatologists"),
-    // CategoryModel(
-    //     id: AssetsManager.gynecologist,
-    //     image: AssetsManager.gynecologist,
-    //     name: "Gynecologist"),
+    CategoryModel(
+        id: AssetsManager.neurologist,
+        image: AssetsManager.neurologist,
+        name: "Neurologist"),
+    CategoryModel(
+        id: AssetsManager.dermatologist,
+        image: AssetsManager.dermatologist,
+        name: "Dermatologist"),
+    CategoryModel(
+        id: AssetsManager.liver,
+        image: AssetsManager.liver,
+        name: "Hepatologists"),
+    CategoryModel(
+        id: AssetsManager.gynecologist,
+        image: AssetsManager.gynecologist,
+        name: "Gynecologist"),
   ];
 }

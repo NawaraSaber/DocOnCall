@@ -129,7 +129,9 @@ class UpComingSchedule extends StatelessWidget {
                         child: const SubtitleTextWidget(label: "Cancel"),
                       ),
                       ElevatedButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          // Navigator.pushNamed(context, can.)
+                        },
                         child: const SubtitleTextWidget(label: "Done"),
                       ),
                     ],

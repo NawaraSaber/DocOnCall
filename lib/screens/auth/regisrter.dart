@@ -74,20 +74,21 @@ class _RegisterScreenState extends State<RegisterScreen> {
   Future<void> localImagePicker() async {
     final ImagePicker picker = ImagePicker();
     await MyAppMethods.imagePickerDialog(
-        context: context,
-        cameraFCT: () async {
-          _pickedImage = await picker.pickImage(source: ImageSource.camera);
-          setState(() {});
-        },
-        gallaryFCT: () async {
-          _pickedImage = await picker.pickImage(source: ImageSource.gallery);
-          setState(() {});
-        },
-        removeFCT: () {
-          setState(() {
-            _pickedImage = null;
-          });
+      context: context,
+      cameraFCT: () async {
+        _pickedImage = await picker.pickImage(source: ImageSource.camera);
+        setState(() {});
+      },
+      gallaryFCT: () async {
+        _pickedImage = await picker.pickImage(source: ImageSource.gallery);
+        setState(() {});
+      },
+      removeFCT: () {
+        setState(() {
+          _pickedImage = null;
         });
+      },
+    );
   }
 
   @override

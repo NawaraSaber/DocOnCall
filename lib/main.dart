@@ -13,6 +13,7 @@ import 'package:doc_on_call/screens/inner_screens/histroy.dart';
 import 'package:doc_on_call/screens/inner_screens/product_details.dart';
 import 'package:doc_on_call/screens/inner_screens/wishlist.dart';
 import 'package:doc_on_call/screens/search_screen.dart';
+import 'package:doc_on_call/screens/specialization.dart';
 import 'package:doc_on_call/screens/splash_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -55,8 +56,7 @@ class MyApp extends StatelessWidget {
           routes: {
             ProductDetails.routName: (context) => const ProductDetails(),
             WishlistScreen.routName: (context) => const WishlistScreen(),
-            HistroyScreen.routName: (context) =>
-                const HistroyScreen(),
+            HistroyScreen.routName: (context) => const HistroyScreen(),
             RegisterScreen.routName: (context) => const RegisterScreen(),
             LoginScreen.routName: (context) => const LoginScreen(),
             // OrdersScreenFree.routeName: (context) => const OrdersScreenFree(),
@@ -65,6 +65,8 @@ class MyApp extends StatelessWidget {
             SearchScreen.routeName: (context) => const SearchScreen(),
             CompeletSchedule.routeName: (context) => const CompeletSchedule(),
             CanceledSchedule.routeName: (context) => const CanceledSchedule(),
+            SpecializationsScreen.routName: (context) => const SpecializationsScreen(),
+            
           },
         );
       }),

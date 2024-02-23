@@ -72,7 +72,7 @@ class MyAppMethods {
     required BuildContext context,
     required Function cameraFCT,
     required Function gallaryFCT,
-    required Function removeFCT,
+    required Function removeFCT, 
   }) async {
     await showDialog(
         context: context,

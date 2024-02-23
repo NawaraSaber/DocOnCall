@@ -72,7 +72,8 @@ class _ScheduleScreenState extends State<ScheduleScreen> {
                       child: SubtitleTextWidget(
                         label: "UpComing",
                         color: _buttonIndex == 0 ? Colors.white : Colors.black,
-                        fontSize: 12,
+                        fontSize: 15,
+                        fontWeight: FontWeight.bold,
                         fontStyle: FontStyle.italic,
                       ),
                     ),
@@ -95,8 +96,9 @@ class _ScheduleScreenState extends State<ScheduleScreen> {
                         borderRadius: BorderRadius.circular(10),
                       ),
                       child: SubtitleTextWidget(
-                        label: "Completed",
-                        fontSize: 12,
+                        label: "Compeleted",
+                        fontSize: 15,
+                        fontWeight: FontWeight.bold,
                         fontStyle: FontStyle.italic,
                         color: _buttonIndex == 1 ? Colors.white : Colors.black,
                       ),
@@ -120,7 +122,8 @@ class _ScheduleScreenState extends State<ScheduleScreen> {
                       child: SubtitleTextWidget(
                         label: "Canceled",
                         fontStyle: FontStyle.italic,
-                        fontSize: 12,
+                        fontWeight: FontWeight.bold,
+                        fontSize: 15,
                         color: _buttonIndex == 2 ? Colors.white : Colors.black,
                       ),
                     ),
