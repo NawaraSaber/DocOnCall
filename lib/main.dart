@@ -66,7 +66,6 @@ class MyApp extends StatelessWidget {
             CompeletSchedule.routeName: (context) => const CompeletSchedule(),
             CanceledSchedule.routeName: (context) => const CanceledSchedule(),
             SpecializationsScreen.routName: (context) => const SpecializationsScreen(),
-            
           },
         );
       }),

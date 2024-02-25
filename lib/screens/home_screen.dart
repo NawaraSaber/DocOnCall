@@ -248,7 +248,8 @@ class HomeScreen extends StatelessWidget {
                   ),
                   TextButton(
                     onPressed: () {
-                      Navigator.pushNamed(context, SpecializationsScreen.routName);
+                      Navigator.pushNamed(
+                          context, SpecializationsScreen.routName);
                     },
                     child: const SubtitleTextWidget(
                       label: "See all",
@@ -275,14 +276,10 @@ class HomeScreen extends StatelessWidget {
                   },
                 ),
               ),
-               Exception caught by rendering library ═════════════════════════════════
-RenderBox was not laid out: RenderTransform#be719 relayoutBoundary=up4
-'package:flutter/src/rendering/box.dart':
-Failed assertion: line 1972 pos 12: 'hasSize'
-                child: TitleTextWidget(
-                  lablel: "Popular Doctors",
-                  fontSize: 20,
-                ),
+              const Row(
+                children: [
+                  TitleTextWidget(lablel: "Popular Doctors"),
+                ],
               ),
               GridView.builder(
                 gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
