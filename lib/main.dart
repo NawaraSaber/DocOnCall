@@ -8,7 +8,10 @@ import 'package:doc_on_call/screens/appioment/canceled_schedule.dart';
 import 'package:doc_on_call/screens/appioment/compelet_schedule.dart';
 import 'package:doc_on_call/screens/auth/forgot_password.dart';
 import 'package:doc_on_call/screens/auth/login.dart';
+import 'package:doc_on_call/screens/auth/otp.dart';
 import 'package:doc_on_call/screens/auth/regisrter.dart';
+import 'package:doc_on_call/screens/contact_us.dart';
+import 'package:doc_on_call/screens/home_screen.dart';
 import 'package:doc_on_call/screens/inner_screens/histroy.dart';
 import 'package:doc_on_call/screens/inner_screens/product_details.dart';
 import 'package:doc_on_call/screens/inner_screens/wishlist.dart';
@@ -59,13 +62,16 @@ class MyApp extends StatelessWidget {
             HistroyScreen.routName: (context) => const HistroyScreen(),
             RegisterScreen.routName: (context) => const RegisterScreen(),
             LoginScreen.routName: (context) => const LoginScreen(),
-            // OrdersScreenFree.routeName: (context) => const OrdersScreenFree(),
+            HomeScreen.routName: (context) =>  HomeScreen(),
             ForgotPasswordScreen.routeName: (context) =>
                 const ForgotPasswordScreen(),
             SearchScreen.routeName: (context) => const SearchScreen(),
             CompeletSchedule.routeName: (context) => const CompeletSchedule(),
             CanceledSchedule.routeName: (context) => const CanceledSchedule(),
-            SpecializationsScreen.routName: (context) => const SpecializationsScreen(),
+            SpecializationsScreen.routName: (context) =>
+                const SpecializationsScreen(),
+            OTPScreen.routName: (context) => const OTPScreen(),
+            ContactUs.routName: (context) => const ContactUs(),
           },
         );
       }),

@@ -1,3 +1,4 @@
+import 'package:doc_on_call/widgets/app_name_text.dart';
 import 'package:dynamic_height_grid_view/dynamic_height_grid_view.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -16,12 +17,19 @@ class WishlistScreen extends StatelessWidget {
     final wishlistProvider = Provider.of<WishlistProvider>(context);
     return wishlistProvider.getWishlistItems.isEmpty
         ? Scaffold(
-            body: EmptyBagWidget(
-                imagePath: AssetsManager.emptySearch,
-                title: "Your Booking page is Empty!",
-                subtitle:
-                    "Looks like you didn't add anything yet to your wishlist \ngo ahead and start booking your doctor",
-                buttonText: "Appoiment Now"),
+            appBar: AppBar(
+              backgroundColor: Theme.of(context).scaffoldBackgroundColor,
+              title: const AppNameTextWidgt(),
+              centerTitle: true,
+            ),
+            body: Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: EmptyBagWidget(
+                  imagePath: AssetsManager.emptySearch,
+                  title: "Your Wishlist page is Empty!",
+                  subtitle: "Seems like you don't have any wishes here!",
+                  buttonText: "Make a wish now"),
+            ),
           )
         : Scaffold(
             appBar: AppBar(

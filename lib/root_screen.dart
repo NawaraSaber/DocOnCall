@@ -19,15 +19,11 @@ class _RootScreenState extends State<RootScreen> {
   late PageController controller;
   int currentScreen = 0;
   List<Widget> screens = [
-    HomeScreen(
-      title: 'DocOnCall',
-    ),
+    HomeScreen(),
     const SearchScreen(),
     const ChatScreen(),
     const ScheduleScreen(),
-    const ProfileScreen(
-      title: 'DocOnCall',
-    ),
+    const ProfileScreen(),
   ];
   @override
   void initState() {
@@ -47,6 +43,7 @@ class _RootScreenState extends State<RootScreen> {
         children: screens,
       ),
       bottomNavigationBar: NavigationBar(
+        shadowColor: Colors.purple,
         selectedIndex: currentScreen,
         backgroundColor: Theme.of(context).scaffoldBackgroundColor,
         elevation: 2,

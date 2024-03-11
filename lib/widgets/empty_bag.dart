@@ -37,7 +37,7 @@ class EmptyBagWidget extends StatelessWidget {
               height: 20,
             ),
             const SubtitleTextWidget(
-              label: "Your Booking page is Empty!",
+              label: "Your Wishlist page is Empty!",
               fontWeight: FontWeight.w600,
               fontSize: 25,
             ),

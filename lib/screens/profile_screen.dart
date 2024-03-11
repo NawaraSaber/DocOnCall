@@ -1,4 +1,3 @@
-import 'package:doc_on_call/screens/auth/login.dart';
 import 'package:doc_on_call/screens/inner_screens/histroy.dart';
 import 'package:doc_on_call/screens/inner_screens/wishlist.dart';
 import 'package:flutter/material.dart';
@@ -12,14 +11,16 @@ import '../widgets/subtitle_text.dart';
 import '../widgets/title_text.dart';
 
 class ProfileScreen extends StatelessWidget {
-  const ProfileScreen({super.key, required String title});
+  const ProfileScreen({
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {
     final themeProvider = Provider.of<ThemeProvider>(context);
     return Scaffold(
       appBar: AppBar(
-        // backgroundColor: Theme.of(context).scaffoldBackgroundColor,
+        backgroundColor: Theme.of(context).scaffoldBackgroundColor,
         title: const AppNameTextWidgt(),
         leading: Padding(
           padding: const EdgeInsets.all(8.0),
@@ -161,11 +162,9 @@ class ProfileScreen extends StatelessWidget {
                   ),
                 ),
               ),
-              icon: const Icon(Icons.login),
-              label: const Text("Login"),
+              icon: const Icon(Icons.logout_sharp),
+              label: const Text("Logout"),
               onPressed: () async {
-                await Navigator.pushNamed(context, LoginScreen.routName);
-                // ignore: use_build_context_synchronously
                 await MyAppMethods.showErrorORWarningDialog(
                     context: context,
                     fct: () {},

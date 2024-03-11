@@ -1,19 +1,17 @@
+import 'package:doc_on_call/consts/navBar.dart';
 import 'package:doc_on_call/providers/theme_provider.dart';
 import 'package:doc_on_call/screens/search_screen.dart';
-import 'package:doc_on_call/screens/specialization.dart';
-import 'package:doc_on_call/widgets/products/ctg_rounded_widget.dart';
 import 'package:doc_on_call/widgets/subtitle_text.dart';
 import 'package:doc_on_call/widgets/title_text.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import '../consts/app_constans.dart';
-import '../services/assets_manager.dart';
 import '../widgets/app_name_text.dart';
 
 // ignore: must_be_immutable
 class HomeScreen extends StatelessWidget {
-  HomeScreen({super.key, required String title});
-  String? get routeName => null;
+  static const routName = '/HomeScreen';
+  HomeScreen({super.key,});
+  // String? get routeName => null;
   List symptoms = [
     "Temperature",
     "Snuffle",
@@ -49,15 +47,17 @@ class HomeScreen extends StatelessWidget {
 
     //Size size = MediaQuery.of(context).size;
     return Scaffold(
+      drawer: const NavBar(),
       appBar: AppBar(
         backgroundColor: Theme.of(context).scaffoldBackgroundColor,
         title: const AppNameTextWidgt(),
-        leading: Padding(
-          padding: const EdgeInsets.all(8.0),
-          child: Image.asset(
-            AssetsManager.doctorLogo,
-          ),
-        ),
+        centerTitle: true,
+        // leading: Padding(
+        //   padding: const EdgeInsets.all(8.0),
+        //   child: Image.asset(
+        //     AssetsManager.doctorLogo,
+        //   ),
+        // ),
       ),
       body: Padding(
         padding: const EdgeInsets.symmetric(
@@ -70,7 +70,7 @@ class HomeScreen extends StatelessWidget {
             //mainAxisAlignment: MainAxisAlignment.center,
             children: [
               const Row(
-                mainAxisAlignment: MainAxisAlignment.start,
+                mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   SubtitleTextWidget(
                     label: "Book Appointment",
@@ -236,46 +236,46 @@ class HomeScreen extends StatelessWidget {
                   },
                 ),
               ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  const Padding(
-                    padding: EdgeInsets.only(left: 5),
-                    child: TitleTextWidget(
-                      lablel: "Popular specializations",
-                      fontSize: 20,
-                    ),
-                  ),
-                  TextButton(
-                    onPressed: () {
-                      Navigator.pushNamed(
-                          context, SpecializationsScreen.routName);
-                    },
-                    child: const SubtitleTextWidget(
-                      label: "See all",
-                      textDecoration: TextDecoration.underline,
-                      fontStyle: FontStyle.italic,
-                    ),
-                  ),
-                ],
-              ),
+              // Row(
+              //   mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              //   children: [
+              //     const Padding(
+              //       padding: EdgeInsets.only(left: 5),
+              //       child: TitleTextWidget(
+              //         lablel: "Popular specializations",
+              //         fontSize: 20,
+              //       ),
+              //     ),
+              //     TextButton(
+              //       onPressed: () {
+              //         Navigator.pushNamed(
+              //             context, SpecializationsScreen.routName);
+              //       },
+              //       child: const SubtitleTextWidget(
+              //         label: "See all",
+              //         textDecoration: TextDecoration.underline,
+              //         fontStyle: FontStyle.italic,
+              //       ),
+              //     ),
+              //   ],
+              // ),
               const SizedBox(
                 height: 15,
               ),
-              GridView.count(
-                shrinkWrap: true,
-                physics: const NeverScrollableScrollPhysics(),
-                crossAxisCount: 4,
-                children: List.generate(
-                  AppConstans.categoriesList.length,
-                  (index) {
-                    return CategoryRoundedWidget(
-                      image: AppConstans.categoriesList[index].image,
-                      name: AppConstans.categoriesList[index].name,
-                    );
-                  },
-                ),
-              ),
+              // GridView.count(
+              //   shrinkWrap: true,
+              //   physics: const NeverScrollableScrollPhysics(),
+              //   crossAxisCount: 4,
+              //   children: List.generate(
+              //     AppConstans.categoriesList.length,
+              //     (index) {
+              //       return CategoryRoundedWidget(
+              //         image: AppConstans.categoriesList[index].image,
+              //         name: AppConstans.categoriesList[index].name,
+              //       );
+              //     },
+              //   ),
+              // ),
               const Row(
                 children: [
                   TitleTextWidget(lablel: "Popular Doctors"),

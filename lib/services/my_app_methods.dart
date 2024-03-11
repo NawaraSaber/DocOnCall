@@ -1,3 +1,4 @@
+import 'package:doc_on_call/screens/auth/login.dart';
 import 'package:flutter/material.dart';
 import '../widgets/subtitle_text.dart';
 import '../widgets/title_text.dart';
@@ -53,7 +54,7 @@ class MyAppMethods {
                     TextButton(
                       onPressed: () {
                         fct();
-                        Navigator.pop(context);
+                        Navigator.pushNamed(context, LoginScreen.routName);
                       },
                       child: const SubtitleTextWidget(
                         label: "OK",
