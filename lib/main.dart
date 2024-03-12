@@ -4,6 +4,7 @@ import 'package:doc_on_call/providers/product_provider.dart';
 import 'package:doc_on_call/providers/theme_provider.dart';
 import 'package:doc_on_call/providers/viewed_prod_provider.dart';
 import 'package:doc_on_call/providers/wishlist_provider.dart';
+import 'package:doc_on_call/screens/appioment/cancel_page.dart';
 import 'package:doc_on_call/screens/appioment/canceled_schedule.dart';
 import 'package:doc_on_call/screens/appioment/compelet_schedule.dart';
 import 'package:doc_on_call/screens/auth/forgot_password.dart';
@@ -72,7 +73,9 @@ class MyApp extends StatelessWidget {
                 const SpecializationsScreen(),
             OTPScreen.routName: (context) => const OTPScreen(),
             ContactUs.routName: (context) => const ContactUs(),
+            CancelPage.routeName: (context) => const CancelPage(),
           },
+
         );
       }),
     );

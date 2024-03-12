@@ -1,3 +1,4 @@
+// ignore: file_names
 import 'package:doc_on_call/screens/contact_us.dart';
 import 'package:doc_on_call/services/my_app_methods.dart';
 import 'package:flutter/material.dart';
