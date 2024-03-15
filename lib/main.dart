@@ -4,14 +4,21 @@ import 'package:doc_on_call/providers/product_provider.dart';
 import 'package:doc_on_call/providers/theme_provider.dart';
 import 'package:doc_on_call/providers/viewed_prod_provider.dart';
 import 'package:doc_on_call/providers/wishlist_provider.dart';
+import 'package:doc_on_call/screens/appioment/cancel_page.dart';
 import 'package:doc_on_call/screens/appioment/canceled_schedule.dart';
 import 'package:doc_on_call/screens/appioment/compelet_schedule.dart';
+import 'package:doc_on_call/screens/appioment/select_package.dart';
 import 'package:doc_on_call/screens/auth/forgot_password.dart';
 import 'package:doc_on_call/screens/auth/login.dart';
+import 'package:doc_on_call/screens/auth/otp.dart';
 import 'package:doc_on_call/screens/auth/regisrter.dart';
+import 'package:doc_on_call/screens/contact_us.dart';
+import 'package:doc_on_call/screens/home_screen.dart';
+import 'package:doc_on_call/screens/inner_screens/histroy.dart';
 import 'package:doc_on_call/screens/inner_screens/product_details.dart';
 import 'package:doc_on_call/screens/inner_screens/wishlist.dart';
 import 'package:doc_on_call/screens/search_screen.dart';
+import 'package:doc_on_call/screens/specialization.dart';
 import 'package:doc_on_call/screens/splash_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -54,16 +61,21 @@ class MyApp extends StatelessWidget {
           routes: {
             ProductDetails.routName: (context) => const ProductDetails(),
             WishlistScreen.routName: (context) => const WishlistScreen(),
-            // ViewedRecentlyScreen.routName: (context) =>
-            //     const ViewedRecentlyScreen(),
+            HistroyScreen.routName: (context) => const HistroyScreen(),
             RegisterScreen.routName: (context) => const RegisterScreen(),
             LoginScreen.routName: (context) => const LoginScreen(),
-            // OrdersScreenFree.routeName: (context) => const OrdersScreenFree(),
+            HomeScreen.routName: (context) => HomeScreen(),
             ForgotPasswordScreen.routeName: (context) =>
                 const ForgotPasswordScreen(),
             SearchScreen.routeName: (context) => const SearchScreen(),
             CompeletSchedule.routeName: (context) => const CompeletSchedule(),
             CanceledSchedule.routeName: (context) => const CanceledSchedule(),
+            SpecializationsScreen.routName: (context) =>
+                const SpecializationsScreen(),
+            OTPScreen.routName: (context) => const OTPScreen(),
+            ContactUs.routName: (context) => const ContactUs(),
+            CancelPage.routeName: (context) => const CancelPage(),
+            SelectPackage.routName: (context) => const SelectPackage(),
           },
         );
       }),

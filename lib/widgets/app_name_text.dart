@@ -8,9 +8,9 @@ class AppNameTextWidgt extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Shimmer.fromColors(
-      period: const Duration(seconds: 6),
-      baseColor: const Color.fromARGB(255, 51, 234, 246),
-      highlightColor: const Color.fromARGB(255, 0, 0, 0),
+      period: const Duration(seconds: 3),
+      baseColor: Colors.purple,
+      highlightColor:  Colors.blue,
       child: TitleTextWidget(
         lablel: "DocOnCall",
         fontSize: fontSize,

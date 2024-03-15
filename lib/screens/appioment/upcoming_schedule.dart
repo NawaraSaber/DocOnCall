@@ -1,4 +1,5 @@
 import 'package:doc_on_call/providers/theme_provider.dart';
+import 'package:doc_on_call/screens/appioment/cancel_page.dart';
 import 'package:doc_on_call/widgets/subtitle_text.dart';
 import 'package:doc_on_call/widgets/title_text.dart';
 import 'package:flutter/material.dart';
@@ -125,11 +126,15 @@ class UpComingSchedule extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
                       ElevatedButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.pushNamed(context, CancelPage.routeName);
+                        },
                         child: const SubtitleTextWidget(label: "Cancel"),
                       ),
                       ElevatedButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          // Navigator.pushNamed(context, can.)
+                        },
                         child: const SubtitleTextWidget(label: "Done"),
                       ),
                     ],
@@ -253,7 +258,9 @@ class UpComingSchedule extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
                       ElevatedButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.pushNamed(context, CancelPage.routeName);
+                        },
                         child: const SubtitleTextWidget(label: "Cancel"),
                       ),
                       ElevatedButton(
@@ -381,7 +388,9 @@ class UpComingSchedule extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
                       ElevatedButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.pushNamed(context, CancelPage.routeName);
+                        },
                         child: const SubtitleTextWidget(label: "Cancel"),
                       ),
                       ElevatedButton(

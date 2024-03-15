@@ -22,19 +22,22 @@ class EmptyBagWidget extends StatelessWidget {
           children: [
             Image.asset(
               imagePath,
-              height: size.height * 0.35,
+              height: size.height * 0.30,
               width: double.infinity,
+            ),
+            const SizedBox(
+              height: 20,
             ),
             const TitleTextWidget(
               lablel: "WhoOops!",
-              fontSize: 40,
+              fontSize: 30,
               color: Colors.red,
             ),
             const SizedBox(
               height: 20,
             ),
             const SubtitleTextWidget(
-              label: "Your Booking page is Empty!",
+              label: "Your Wishlist page is Empty!",
               fontWeight: FontWeight.w600,
               fontSize: 25,
             ),

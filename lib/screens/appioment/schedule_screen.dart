@@ -2,7 +2,6 @@ import 'package:doc_on_call/screens/appioment/canceled_schedule.dart';
 import 'package:doc_on_call/screens/appioment/compelet_schedule.dart';
 import 'package:doc_on_call/screens/appioment/upcoming_schedule.dart';
 import 'package:doc_on_call/widgets/subtitle_text.dart';
-import 'package:doc_on_call/widgets/title_text.dart';
 import 'package:flutter/material.dart';
 
 class ScheduleScreen extends StatefulWidget {
@@ -28,22 +27,23 @@ class _ScheduleScreenState extends State<ScheduleScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return SingleChildScrollView(
-      child: Padding(
-        padding: const EdgeInsets.only(top: 40),
+    //final themeProvider = Provider.of<ThemeProvider>(context);
+    return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Theme.of(context).scaffoldBackgroundColor,
+        title: const Text(
+          "Schedule",
+          style: TextStyle(
+            fontWeight: FontWeight.bold,
+            fontSize: 25,
+          ),
+        ),
+        centerTitle: true,
+      ),
+      body: SingleChildScrollView(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            const Padding(
-              padding: EdgeInsets.symmetric(horizontal: 15),
-              child: TitleTextWidget(
-                lablel: "Schedule",
-                fontSize: 28,
-              ),
-            ),
-            const SizedBox(
-              height: 10,
-            ),
             Container(
               padding: const EdgeInsets.all(5),
               margin: const EdgeInsets.symmetric(horizontal: 10),
@@ -71,8 +71,10 @@ class _ScheduleScreenState extends State<ScheduleScreen> {
                       ),
                       child: SubtitleTextWidget(
                         label: "UpComing",
-                        color: _buttonIndex == 0 ? Colors.white : Colors.black,
-                        fontSize: 12,
+                        color:
+                            _buttonIndex == 0 ? Colors.white : Colors.black,
+                        fontSize: 15,
+                        fontWeight: FontWeight.bold,
                         fontStyle: FontStyle.italic,
                       ),
                     ),
@@ -95,10 +97,12 @@ class _ScheduleScreenState extends State<ScheduleScreen> {
                         borderRadius: BorderRadius.circular(10),
                       ),
                       child: SubtitleTextWidget(
-                        label: "Completed",
-                        fontSize: 12,
+                        label: "Compeleted",
+                        fontSize: 15,
+                        fontWeight: FontWeight.bold,
                         fontStyle: FontStyle.italic,
-                        color: _buttonIndex == 1 ? Colors.white : Colors.black,
+                        color:
+                            _buttonIndex == 1 ? Colors.white : Colors.black,
                       ),
                     ),
                   ),
@@ -120,8 +124,10 @@ class _ScheduleScreenState extends State<ScheduleScreen> {
                       child: SubtitleTextWidget(
                         label: "Canceled",
                         fontStyle: FontStyle.italic,
-                        fontSize: 12,
-                        color: _buttonIndex == 2 ? Colors.white : Colors.black,
+                        fontWeight: FontWeight.bold,
+                        fontSize: 15,
+                        color:
+                            _buttonIndex == 2 ? Colors.white : Colors.black,
                       ),
                     ),
                   ),
@@ -129,7 +135,7 @@ class _ScheduleScreenState extends State<ScheduleScreen> {
               ),
             ),
             const SizedBox(
-              height: 30,
+              height: 15,
             ),
             _scheduleWidgets[_buttonIndex],
           ],

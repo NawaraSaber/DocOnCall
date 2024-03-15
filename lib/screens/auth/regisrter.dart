@@ -1,4 +1,5 @@
 import 'package:doc_on_call/screens/auth/login.dart';
+import 'package:doc_on_call/screens/auth/otp.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_iconly/flutter_iconly.dart';
 import 'package:image_picker/image_picker.dart';
@@ -74,20 +75,21 @@ class _RegisterScreenState extends State<RegisterScreen> {
   Future<void> localImagePicker() async {
     final ImagePicker picker = ImagePicker();
     await MyAppMethods.imagePickerDialog(
-        context: context,
-        cameraFCT: () async {
-          _pickedImage = await picker.pickImage(source: ImageSource.camera);
-          setState(() {});
-        },
-        gallaryFCT: () async {
-          _pickedImage = await picker.pickImage(source: ImageSource.gallery);
-          setState(() {});
-        },
-        removeFCT: () {
-          setState(() {
-            _pickedImage = null;
-          });
+      context: context,
+      cameraFCT: () async {
+        _pickedImage = await picker.pickImage(source: ImageSource.camera);
+        setState(() {});
+      },
+      gallaryFCT: () async {
+        _pickedImage = await picker.pickImage(source: ImageSource.gallery);
+        setState(() {});
+      },
+      removeFCT: () {
+        setState(() {
+          _pickedImage = null;
         });
+      },
+    );
   }
 
   @override
@@ -308,7 +310,8 @@ class _RegisterScreenState extends State<RegisterScreen> {
                             ),
                           ),
                           onPressed: () async {
-                            _registerFct();
+                            _registerFct;
+                            Navigator.pushNamed(context, OTPScreen.routName);
                           },
                         ),
                       ),

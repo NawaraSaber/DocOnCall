@@ -1,18 +1,20 @@
-import 'package:card_swiper/card_swiper.dart';
+import 'package:doc_on_call/consts/navBar.dart';
 import 'package:doc_on_call/providers/theme_provider.dart';
 import 'package:doc_on_call/screens/search_screen.dart';
-import 'package:doc_on_call/widgets/products/ctg_rounded_widget.dart';
+import 'package:doc_on_call/widgets/subtitle_text.dart';
 import 'package:doc_on_call/widgets/title_text.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_iconly/flutter_iconly.dart';
 import 'package:provider/provider.dart';
-import '../consts/app_constans.dart';
-import '../services/assets_manager.dart';
 import '../widgets/app_name_text.dart';
 
 // ignore: must_be_immutable
 class HomeScreen extends StatelessWidget {
-  HomeScreen({super.key, required String title});
-  String? get routeName => null;
+  static const routName = '/HomeScreen';
+  HomeScreen({
+    super.key,
+  });
+  // String? get routeName => null;
   List symptoms = [
     "Temperature",
     "Snuffle",
@@ -46,20 +48,29 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     final themeProvider = Provider.of<ThemeProvider>(context);
 
-    Size size = MediaQuery.of(context).size;
+    //Size size = MediaQuery.of(context).size;
     return Scaffold(
+      drawer: const NavBar(),
       appBar: AppBar(
         backgroundColor: Theme.of(context).scaffoldBackgroundColor,
         title: const AppNameTextWidgt(),
-        leading: Padding(
-          padding: const EdgeInsets.all(8.0),
-          child: Image.asset(
-            AssetsManager.doctorLogo,
-          ),
-        ),
+        //centerTitle: true,
+        // leading: IconButton(
+        //   onPressed: () {},
+        //   icon: const Icon(
+        //     IconlyLight.chat,
+        //   ),
+        // ),
+        // leading: Padding(
+        //   padding: const EdgeInsets.all(8.0),
+        //   child: Image.asset(
+        //     AssetsManager.doctorLogo,
+        //   ),
+        // ),
       ),
       body: Padding(
         padding: const EdgeInsets.symmetric(
+          vertical: 12,
           horizontal: 12,
         ),
         child: SingleChildScrollView(
@@ -67,33 +78,25 @@ class HomeScreen extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             //mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              SizedBox(
-                height: size.height * 0.15,
-                child: ClipRRect(
-                  borderRadius: const BorderRadius.only(
-                    topLeft: Radius.circular(12.0),
-                    topRight: Radius.circular(12.0),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  const SubtitleTextWidget(
+                    label: "Book Appointment",
+                    fontSize: 20,
+                    fontWeight: FontWeight.bold,
                   ),
-                  child: Swiper(
-                    itemBuilder: (BuildContext context, int index) {
-                      return Image.asset(
-                        AppConstans.bannersImages[index],
-                        fit: BoxFit.fitHeight,
-                      );
-                    },
-                    autoplay: true,
-                    itemCount: AppConstans.bannersImages.length,
-                    pagination: const SwiperPagination(
-                        alignment: Alignment.bottomCenter,
-                        builder: DotSwiperPaginationBuilder(
-                          color: Colors.white,
-                          activeColor: Colors.red,
-                        )),
+                  IconButton(
+                    onPressed: () {},
+                    icon: const Icon(
+                      IconlyLight.chat,
+                      size: 30,
+                    ),
                   ),
-                ),
+                ],
               ),
               const SizedBox(
-                height: 25,
+                height: 15,
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -108,7 +111,7 @@ class HomeScreen extends StatelessWidget {
                     child: Container(
                       padding: const EdgeInsets.all(10),
                       decoration: BoxDecoration(
-                        color: Colors.lightBlue,
+                        color: Colors.purple,
                         borderRadius: BorderRadius.circular(10),
                       ),
                       child: Column(
@@ -223,26 +226,35 @@ class HomeScreen extends StatelessWidget {
                   itemBuilder: (context, index) {
                     return Container(
                       margin: const EdgeInsets.symmetric(
-                          vertical: 10, horizontal: 15),
+                        vertical: 10,
+                        horizontal: 15,
+                      ),
                       padding: const EdgeInsets.symmetric(horizontal: 25),
                       decoration: BoxDecoration(
-                        color: Colors.white,
+                        color: themeProvider.getIsDarkTheme
+                            ? Colors.black
+                            : Colors.white,
                         borderRadius: BorderRadius.circular(10),
-                        boxShadow: const [
-                          BoxShadow(
-                            color: Colors.black12,
-                            blurRadius: 4,
-                            spreadRadius: 2,
-                          ),
-                        ],
+                        border: Border.all(
+                          color: Colors.purple,
+                        ),
+                        // boxShadow: const [
+                        //   BoxShadow(
+                        //     color: Colors.black12,
+                        //     blurRadius: 4,
+                        //     spreadRadius: 2,
+                        //   ),
+                        // ],
                       ),
                       child: Center(
                         child: Text(
                           symptoms[index],
-                          style: const TextStyle(
+                          style: TextStyle(
                             fontSize: 14,
                             fontWeight: FontWeight.w500,
-                            color: Colors.black54,
+                            color: themeProvider.getIsDarkTheme
+                                ? Colors.white
+                                : Colors.black,
                           ),
                         ),
                       ),
@@ -250,40 +262,50 @@ class HomeScreen extends StatelessWidget {
                   },
                 ),
               ),
+              // Row(
+              //   mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              //   children: [
+              //     const Padding(
+              //       padding: EdgeInsets.only(left: 5),
+              //       child: TitleTextWidget(
+              //         lablel: "Popular specializations",
+              //         fontSize: 20,
+              //       ),
+              //     ),
+              //     TextButton(
+              //       onPressed: () {
+              //         Navigator.pushNamed(
+              //             context, SpecializationsScreen.routName);
+              //       },
+              //       child: const SubtitleTextWidget(
+              //         label: "See all",
+              //         textDecoration: TextDecoration.underline,
+              //         fontStyle: FontStyle.italic,
+              //       ),
+              //     ),
+              //   ],
+              // ),
               const SizedBox(
                 height: 15,
               ),
-              const Padding(
-                padding: EdgeInsets.only(left: 5),
-                child: TitleTextWidget(
-                  lablel: "Popular specializations",
-                  fontSize: 20,
-                ),
-              ),
-              const SizedBox(
-                height: 15,
-              ),
-              GridView.count(
-                  shrinkWrap: true,
-                  physics: const NeverScrollableScrollPhysics(),
-                  crossAxisCount: 4,
-                  children:
-                      List.generate(AppConstans.categoriesList.length, (index) {
-                    return CategoryRoundedWidget(
-                        image: AppConstans.categoriesList[index].image,
-                        name: AppConstans.categoriesList[index].name);
-                  })),
-              const SizedBox(
-                height: 25,
-              ),
-              const Padding(
-                padding: EdgeInsets.only(
-                  left: 5,
-                ),
-                child: TitleTextWidget(
-                  lablel: "Popular Doctors",
-                  fontSize: 20,
-                ),
+              // GridView.count(
+              //   shrinkWrap: true,
+              //   physics: const NeverScrollableScrollPhysics(),
+              //   crossAxisCount: 4,
+              //   children: List.generate(
+              //     AppConstans.categoriesList.length,
+              //     (index) {
+              //       return CategoryRoundedWidget(
+              //         image: AppConstans.categoriesList[index].image,
+              //         name: AppConstans.categoriesList[index].name,
+              //       );
+              //     },
+              //   ),
+              // ),
+              const Row(
+                children: [
+                  TitleTextWidget(lablel: "Popular Doctors"),
+                ],
               ),
               GridView.builder(
                 gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
@@ -299,15 +321,20 @@ class HomeScreen extends StatelessWidget {
                       margin: const EdgeInsets.all(15),
                       padding: const EdgeInsets.symmetric(vertical: 15),
                       decoration: BoxDecoration(
-                        color: Colors.white,
+                        color: themeProvider.getIsDarkTheme
+                            ? const Color.fromARGB(255, 9, 3, 27)
+                            : Colors.white,
                         borderRadius: BorderRadius.circular(10),
-                        boxShadow: const [
-                          BoxShadow(
-                            color: Colors.black12,
-                            blurRadius: 4,
-                            spreadRadius: 2,
-                          ),
-                        ],
+                        border: Border.all(
+                          color: Colors.purple,
+                        ),
+                        // boxShadow: const [
+                        //   BoxShadow(
+                        //     color: Colors.purple,
+                        //     blurRadius: 4,
+                        //     spreadRadius: 2,
+                        //   ),
+                        // ],
                       ),
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -318,16 +345,21 @@ class HomeScreen extends StatelessWidget {
                           ),
                           Text(
                             "${names[index]}",
-                            style: const TextStyle(
-                                fontSize: 12,
-                                fontWeight: FontWeight.bold,
-                                color: Colors.black54),
+                            style: TextStyle(
+                              fontSize: 12,
+                              fontWeight: FontWeight.bold,
+                              color: themeProvider.getIsDarkTheme
+                                  ? Colors.white
+                                  : Colors.black,
+                            ),
                           ),
-                          const Text(
+                          Text(
                             "Therapist",
                             style: TextStyle(
                               fontSize: 10,
-                              color: Colors.black45,
+                              color: themeProvider.getIsDarkTheme
+                                  ? Colors.white
+                                  : Colors.black,
                             ),
                           ),
                           Row(
@@ -337,13 +369,17 @@ class HomeScreen extends StatelessWidget {
                               const Icon(
                                 Icons.star,
                                 color: Colors.amber,
+                                size: 15,
+                              ),
+                              const SizedBox(
+                                width: 5,
                               ),
                               Text(
                                 "${rates[index]}",
                                 style: TextStyle(
                                   fontSize: 12,
                                   color: themeProvider.getIsDarkTheme
-                                      ? const Color.fromARGB(255, 9, 3, 27)
+                                      ? Colors.white
                                       : Colors.black,
                                 ),
                               ),
