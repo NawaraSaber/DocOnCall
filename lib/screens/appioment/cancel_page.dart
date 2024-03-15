@@ -210,10 +210,12 @@ class _CancelPageState extends State<CancelPage> {
                             //Navigator.pushNamed(context, CanceledSchedule.routeName);
                           },
                           child: const Text(
-                            "Submit",
+                            "Canel Appointment",
                             style: TextStyle(
-                                color: Colors.black,
-                                backgroundColor: Colors.white),
+                              //color: Colors.black,
+                              fontSize: 17,
+                              fontWeight: FontWeight.bold
+                            ),
                           )),
                     ),
                   ],

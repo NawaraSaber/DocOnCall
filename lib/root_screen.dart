@@ -74,11 +74,11 @@ class _RootScreenState extends State<RootScreen> {
             icon: Icon(IconlyLight.calendar),
             label: "Booking",
           ),
-          NavigationDestination(
-            selectedIcon: Icon(IconlyBold.profile),
-            icon: Icon(IconlyLight.profile),
-            label: "Profile",
-          ),
+          // NavigationDestination(
+          //   selectedIcon: Icon(IconlyBold.profile),
+          //   icon: Icon(IconlyLight.profile),
+          //   label: "Profile",
+          // ),
         ],
       ),
     );

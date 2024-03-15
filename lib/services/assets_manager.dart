@@ -9,7 +9,14 @@ class AssetsManager {
   static String customerService = "$imagesPath/customer service.jpg";
   static String customerService2 = "$imagesPath/customer service2.jpg";
   static String cs = "$imagesPath/cs.png";
+  static String messenger = "$imagesPath/messenger.png";
+  static String voicecall = "$imagesPath/voicecall.png";
+  static String home = "$imagesPath/home.png";
+  static String user = "$imagesPath/user.png";
+  static String videocall = "$imagesPath/videocall.png";
   static String mapRounded = "$imagesPath/rounded_map.png";
+  static String chatbot = "$imagesPath/chatbot.png";
+  static String livechat = "$imagesPath/livechat.png";
   static String warning = "$imagesPath/warning.png";
   static String error = "$imagesPath/error.png";
   static String splashImage = "$imagesPath/splash.png";

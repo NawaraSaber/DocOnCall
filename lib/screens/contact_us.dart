@@ -52,7 +52,8 @@ class ContactUs extends StatelessWidget {
             Center(
               child: ElevatedButton.icon(
                 style: ElevatedButton.styleFrom(
-                  padding: const EdgeInsets.symmetric(horizontal: 88,vertical: 10),
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: 88, vertical: 10),
                   backgroundColor: Colors.white,
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(
@@ -80,7 +81,8 @@ class ContactUs extends StatelessWidget {
             ),
             ElevatedButton.icon(
               style: ElevatedButton.styleFrom(
-                padding: const EdgeInsets.symmetric(horizontal: 88,vertical: 10),
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 88, vertical: 10),
                 backgroundColor: Colors.white,
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(
@@ -107,7 +109,8 @@ class ContactUs extends StatelessWidget {
             ),
             ElevatedButton.icon(
               style: ElevatedButton.styleFrom(
-                padding: const EdgeInsets.symmetric(horizontal: 50,vertical: 10),
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 50, vertical: 10),
                 backgroundColor: Colors.white,
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(
@@ -166,6 +169,11 @@ class ContactUs extends StatelessWidget {
                     size: 40,
                   ),
                 ),
+                // Image.asset(
+                //   AssetsManager.notifications,
+                //   height: 30,
+                //   width: 30,
+                // ),
               ],
             )
           ],

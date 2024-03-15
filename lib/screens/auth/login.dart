@@ -1,4 +1,5 @@
 import 'package:doc_on_call/screens/auth/regisrter.dart';
+import 'package:doc_on_call/screens/home_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_iconly/flutter_iconly.dart';
 import '../../consts/my_validators.dart';
@@ -181,6 +182,7 @@ class _LoginScreenState extends State<LoginScreen> {
                           ),
                           onPressed: () async {
                             _loginFct();
+                            Navigator.pushNamed(context, HomeScreen.routName);
                           },
                         ),
                       ),

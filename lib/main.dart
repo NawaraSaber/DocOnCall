@@ -7,6 +7,7 @@ import 'package:doc_on_call/providers/wishlist_provider.dart';
 import 'package:doc_on_call/screens/appioment/cancel_page.dart';
 import 'package:doc_on_call/screens/appioment/canceled_schedule.dart';
 import 'package:doc_on_call/screens/appioment/compelet_schedule.dart';
+import 'package:doc_on_call/screens/appioment/select_package.dart';
 import 'package:doc_on_call/screens/auth/forgot_password.dart';
 import 'package:doc_on_call/screens/auth/login.dart';
 import 'package:doc_on_call/screens/auth/otp.dart';
@@ -63,7 +64,7 @@ class MyApp extends StatelessWidget {
             HistroyScreen.routName: (context) => const HistroyScreen(),
             RegisterScreen.routName: (context) => const RegisterScreen(),
             LoginScreen.routName: (context) => const LoginScreen(),
-            HomeScreen.routName: (context) =>  HomeScreen(),
+            HomeScreen.routName: (context) => HomeScreen(),
             ForgotPasswordScreen.routeName: (context) =>
                 const ForgotPasswordScreen(),
             SearchScreen.routeName: (context) => const SearchScreen(),
@@ -74,8 +75,8 @@ class MyApp extends StatelessWidget {
             OTPScreen.routName: (context) => const OTPScreen(),
             ContactUs.routName: (context) => const ContactUs(),
             CancelPage.routeName: (context) => const CancelPage(),
+            SelectPackage.routName: (context) => const SelectPackage(),
           },
-
         );
       }),
     );

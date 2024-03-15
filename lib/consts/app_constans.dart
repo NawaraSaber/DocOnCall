@@ -26,21 +26,21 @@ class AppConstans {
         id: AssetsManager.heart,
         image: AssetsManager.heart,
         name: "Cardiologist"),
-    // CategoryModel(
-    //     id: AssetsManager.neurologist,
-    //     image: AssetsManager.neurologist,
-    //     name: "Neurologist"),
-    // CategoryModel(
-    //     id: AssetsManager.dermatologist,
-    //     image: AssetsManager.dermatologist,
-    //     name: "Dermatologist"),
-    // CategoryModel(
-    //     id: AssetsManager.liver,
-    //     image: AssetsManager.liver,
-    //     name: "Hepatologists"),
-    // CategoryModel(
-    //     id: AssetsManager.gynecologist,
-    //     image: AssetsManager.gynecologist,
-    //     name: "Gynecologist"),
+    CategoryModel(
+        id: AssetsManager.neurologist,
+        image: AssetsManager.neurologist,
+        name: "Neurologist"),
+    CategoryModel(
+        id: AssetsManager.dermatologist,
+        image: AssetsManager.dermatologist,
+        name: "Dermatologist"),
+    CategoryModel(
+        id: AssetsManager.liver,
+        image: AssetsManager.liver,
+        name: "Hepatologists"),
+    CategoryModel(
+        id: AssetsManager.gynecologist,
+        image: AssetsManager.gynecologist,
+        name: "Gynecologist"),
   ];
 }

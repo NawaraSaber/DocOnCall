@@ -1,14 +1,20 @@
 // ignore: file_names
+import 'package:doc_on_call/providers/theme_provider.dart';
 import 'package:doc_on_call/screens/contact_us.dart';
+import 'package:doc_on_call/screens/inner_screens/histroy.dart';
+import 'package:doc_on_call/screens/inner_screens/wishlist.dart';
+import 'package:doc_on_call/screens/profile_screen.dart';
+import 'package:doc_on_call/services/assets_manager.dart';
 import 'package:doc_on_call/services/my_app_methods.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_iconly/flutter_iconly.dart';
+import 'package:provider/provider.dart';
 
 class NavBar extends StatelessWidget {
   const NavBar({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final themeProvider = Provider.of<ThemeProvider>(context);
     return Drawer(
       child: ListView(
         padding: EdgeInsets.zero,
@@ -36,54 +42,63 @@ class NavBar extends StatelessWidget {
               ),
             ),
           ),
-          ListTile(
-            leading: const Icon(
-              IconlyLight.chat,
-            ),
-            title: const Text("Chat Bot"),
-            onTap: () {},
+          CustomListTitle(
+            imagePath:AssetsManager.chatbot,
+            text:  "Chat Bot",
+            function: (){},
           ),
-          ListTile(
-            leading: const Icon(Icons.favorite),
-            title: const Text("Favorite"),
-            onTap: () {},
+          CustomListTitle(
+            imagePath: AssetsManager.history,
+            text: "History",
+            function: () async {
+              await Navigator.pushNamed(context, HistroyScreen.routName);
+            },
           ),
-          ListTile(
-            leading: const Icon(Icons.favorite),
-            title: const Text("Favorite"),
-            onTap: () {},
-          ),
+          CustomListTitle(
+                  imagePath: AssetsManager.wishlist,
+                  text: "Favorite Doctor",
+                  function: () async {
+                    await Navigator.pushNamed(context, WishlistScreen.routName);
+                  },
+                ),
           const Divider(),
           ListTile(
-              leading: const Icon(Icons.notifications),
+              leading: const Icon(Icons.notifications,size: 33),
               title: const Text("Notifications"),
               onTap: () {},
               trailing: ClipOval(
                 child: Container(
                   color: Colors.red,
-                  width: 20,
-                  height: 20,
+                  width: 23,
+                  height: 23,
                   child: const Center(
                     child: Text(
                       "5",
                       style: TextStyle(
                         color: Colors.white,
-                        fontSize: 12,
+                        fontSize: 13,
                       ),
                     ),
                   ),
                 ),
               )),
-          ListTile(
-            leading: const Icon(Icons.favorite),
-            title: const Text("Favorite"),
-            onTap: () {},
+          SwitchListTile(
+            secondary: Image.asset(
+              AssetsManager.theme,
+              height: 30,
+            ),
+            title:
+                Text(themeProvider.getIsDarkTheme ? "Dark mode" : "Light mode"),
+            value: themeProvider.getIsDarkTheme,
+            onChanged: (value) {
+              themeProvider.setDarkTheme(themeValue: value);
+            },
           ),
           const Divider(),
-          ListTile(
-            leading: const Icon(Icons.contact_support),
-            title: const Text("Contact Us"),
-            onTap: () {
+          CustomListTitle(
+            imagePath:AssetsManager.livechat,
+            text:  "Contact Us",
+            function: (){
               Navigator.pushNamed(context, ContactUs.routName);
             },
           ),

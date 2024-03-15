@@ -4,13 +4,16 @@ import 'package:doc_on_call/screens/search_screen.dart';
 import 'package:doc_on_call/widgets/subtitle_text.dart';
 import 'package:doc_on_call/widgets/title_text.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_iconly/flutter_iconly.dart';
 import 'package:provider/provider.dart';
 import '../widgets/app_name_text.dart';
 
 // ignore: must_be_immutable
 class HomeScreen extends StatelessWidget {
   static const routName = '/HomeScreen';
-  HomeScreen({super.key,});
+  HomeScreen({
+    super.key,
+  });
   // String? get routeName => null;
   List symptoms = [
     "Temperature",
@@ -51,7 +54,13 @@ class HomeScreen extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: Theme.of(context).scaffoldBackgroundColor,
         title: const AppNameTextWidgt(),
-        centerTitle: true,
+        //centerTitle: true,
+        // leading: IconButton(
+        //   onPressed: () {},
+        //   icon: const Icon(
+        //     IconlyLight.chat,
+        //   ),
+        // ),
         // leading: Padding(
         //   padding: const EdgeInsets.all(8.0),
         //   child: Image.asset(
@@ -69,12 +78,20 @@ class HomeScreen extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             //mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              const Row(
-                mainAxisAlignment: MainAxisAlignment.center,
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  SubtitleTextWidget(
+                  const SubtitleTextWidget(
                     label: "Book Appointment",
+                    fontSize: 20,
                     fontWeight: FontWeight.bold,
+                  ),
+                  IconButton(
+                    onPressed: () {},
+                    icon: const Icon(
+                      IconlyLight.chat,
+                      size: 30,
+                    ),
                   ),
                 ],
               ),
@@ -94,7 +111,7 @@ class HomeScreen extends StatelessWidget {
                     child: Container(
                       padding: const EdgeInsets.all(10),
                       decoration: BoxDecoration(
-                        color: const Color.fromARGB(255, 111, 2, 161),
+                        color: Colors.purple,
                         borderRadius: BorderRadius.circular(10),
                       ),
                       child: Column(
@@ -146,7 +163,7 @@ class HomeScreen extends StatelessWidget {
                     child: Container(
                       padding: const EdgeInsets.all(10),
                       decoration: BoxDecoration(
-                        color: const Color.fromARGB(255, 111, 2, 161),
+                        color: Colors.purple,
                         borderRadius: BorderRadius.circular(8),
                       ),
                       child: Column(
@@ -209,26 +226,35 @@ class HomeScreen extends StatelessWidget {
                   itemBuilder: (context, index) {
                     return Container(
                       margin: const EdgeInsets.symmetric(
-                          vertical: 10, horizontal: 15),
+                        vertical: 10,
+                        horizontal: 15,
+                      ),
                       padding: const EdgeInsets.symmetric(horizontal: 25),
                       decoration: BoxDecoration(
-                        color: Colors.white,
+                        color: themeProvider.getIsDarkTheme
+                            ? Colors.black
+                            : Colors.white,
                         borderRadius: BorderRadius.circular(10),
-                        boxShadow: const [
-                          BoxShadow(
-                            color: Colors.black12,
-                            blurRadius: 4,
-                            spreadRadius: 2,
-                          ),
-                        ],
+                        border: Border.all(
+                          color: Colors.purple,
+                        ),
+                        // boxShadow: const [
+                        //   BoxShadow(
+                        //     color: Colors.black12,
+                        //     blurRadius: 4,
+                        //     spreadRadius: 2,
+                        //   ),
+                        // ],
                       ),
                       child: Center(
                         child: Text(
                           symptoms[index],
-                          style: const TextStyle(
+                          style: TextStyle(
                             fontSize: 14,
                             fontWeight: FontWeight.w500,
-                            color: Colors.black54,
+                            color: themeProvider.getIsDarkTheme
+                                ? Colors.white
+                                : Colors.black,
                           ),
                         ),
                       ),
@@ -295,15 +321,20 @@ class HomeScreen extends StatelessWidget {
                       margin: const EdgeInsets.all(15),
                       padding: const EdgeInsets.symmetric(vertical: 15),
                       decoration: BoxDecoration(
-                        color: Colors.white,
+                        color: themeProvider.getIsDarkTheme
+                            ? const Color.fromARGB(255, 9, 3, 27)
+                            : Colors.white,
                         borderRadius: BorderRadius.circular(10),
-                        boxShadow: const [
-                          BoxShadow(
-                            color: Colors.black12,
-                            blurRadius: 4,
-                            spreadRadius: 2,
-                          ),
-                        ],
+                        border: Border.all(
+                          color: Colors.purple,
+                        ),
+                        // boxShadow: const [
+                        //   BoxShadow(
+                        //     color: Colors.purple,
+                        //     blurRadius: 4,
+                        //     spreadRadius: 2,
+                        //   ),
+                        // ],
                       ),
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -314,16 +345,21 @@ class HomeScreen extends StatelessWidget {
                           ),
                           Text(
                             "${names[index]}",
-                            style: const TextStyle(
-                                fontSize: 12,
-                                fontWeight: FontWeight.bold,
-                                color: Colors.black54),
+                            style: TextStyle(
+                              fontSize: 12,
+                              fontWeight: FontWeight.bold,
+                              color: themeProvider.getIsDarkTheme
+                                  ? Colors.white
+                                  : Colors.black,
+                            ),
                           ),
-                          const Text(
+                          Text(
                             "Therapist",
                             style: TextStyle(
                               fontSize: 10,
-                              color: Colors.black45,
+                              color: themeProvider.getIsDarkTheme
+                                  ? Colors.white
+                                  : Colors.black,
                             ),
                           ),
                           Row(
@@ -333,13 +369,17 @@ class HomeScreen extends StatelessWidget {
                               const Icon(
                                 Icons.star,
                                 color: Colors.amber,
+                                size: 15,
+                              ),
+                              const SizedBox(
+                                width: 5,
                               ),
                               Text(
                                 "${rates[index]}",
                                 style: TextStyle(
                                   fontSize: 12,
                                   color: themeProvider.getIsDarkTheme
-                                      ? const Color.fromARGB(255, 9, 3, 27)
+                                      ? Colors.white
                                       : Colors.black,
                                 ),
                               ),
