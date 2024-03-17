@@ -111,7 +111,7 @@ class HomeScreen extends StatelessWidget {
                     child: Container(
                       padding: const EdgeInsets.all(10),
                       decoration: BoxDecoration(
-                        color: Colors.purple,
+                        color: Color.fromARGB(255, 114, 56, 201),
                         borderRadius: BorderRadius.circular(10),
                       ),
                       child: Column(
@@ -163,7 +163,7 @@ class HomeScreen extends StatelessWidget {
                     child: Container(
                       padding: const EdgeInsets.all(10),
                       decoration: BoxDecoration(
-                        color: Colors.purple,
+                        color: Color.fromARGB(255, 114, 56, 201),
                         borderRadius: BorderRadius.circular(8),
                       ),
                       child: Column(
@@ -236,7 +236,7 @@ class HomeScreen extends StatelessWidget {
                             : Colors.white,
                         borderRadius: BorderRadius.circular(10),
                         border: Border.all(
-                          color: Colors.purple,
+                          color: Color.fromARGB(255, 114, 56, 201),
                         ),
                         // boxShadow: const [
                         //   BoxShadow(
@@ -326,7 +326,7 @@ class HomeScreen extends StatelessWidget {
                             : Colors.white,
                         borderRadius: BorderRadius.circular(10),
                         border: Border.all(
-                          color: Colors.purple,
+                          color: Color.fromARGB(255, 114, 56, 201),
                         ),
                         // boxShadow: const [
                         //   BoxShadow(

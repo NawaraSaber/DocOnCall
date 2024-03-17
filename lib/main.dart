@@ -4,9 +4,11 @@ import 'package:doc_on_call/providers/product_provider.dart';
 import 'package:doc_on_call/providers/theme_provider.dart';
 import 'package:doc_on_call/providers/viewed_prod_provider.dart';
 import 'package:doc_on_call/providers/wishlist_provider.dart';
+import 'package:doc_on_call/screens/appioment/book_time.dart';
 import 'package:doc_on_call/screens/appioment/cancel_page.dart';
 import 'package:doc_on_call/screens/appioment/canceled_schedule.dart';
 import 'package:doc_on_call/screens/appioment/compelet_schedule.dart';
+import 'package:doc_on_call/screens/appioment/doctor_details.dart';
 import 'package:doc_on_call/screens/appioment/select_package.dart';
 import 'package:doc_on_call/screens/auth/forgot_password.dart';
 import 'package:doc_on_call/screens/auth/login.dart';
@@ -75,7 +77,9 @@ class MyApp extends StatelessWidget {
             OTPScreen.routName: (context) => const OTPScreen(),
             ContactUs.routName: (context) => const ContactUs(),
             CancelPage.routeName: (context) => const CancelPage(),
-            SelectPackage.routName: (context) => const SelectPackage(),
+            DoctorDetails.routName: (context) => const DoctorDetails(),
+            BookTime.routeName: (context) => const BookTime(),
+            SelectPackage.routeName: (context) => const SelectPackage(),
           },
         );
       }),

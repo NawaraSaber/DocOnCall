@@ -1,4 +1,4 @@
-import 'package:doc_on_call/screens/appioment/select_package.dart';
+import 'package:doc_on_call/screens/appioment/doctor_details.dart';
 import 'package:doc_on_call/screens/inner_screens/product_details.dart';
 import 'package:fancy_shimmer_image/fancy_shimmer_image.dart';
 import 'package:flutter/material.dart';
@@ -148,7 +148,7 @@ class _ProductWidgetState extends State<ProductWidget> {
                               onPressed: () {
                                 Navigator.pushNamed(
                                   context,
-                                  SelectPackage.routName,
+                                  DoctorDetails.routName,
                                 );
                               },
                               child: const SubtitleTextWidget(
